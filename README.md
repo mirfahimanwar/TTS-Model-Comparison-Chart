@@ -14,7 +14,7 @@ Personal benchmark of open-source / local text-to-speech models.
 
 | Model | 12s Time | 12s RTF | 30s Time | 30s RTF | 60s Time | 60s RTF | App Speed | CLI Speed |
 |---|---|---|---|---|---|---|---|---|
-| **Bark** | 16.4s | 1.33 | — | — | — | — | — | — |
+| **Bark** | 16.4s | 1.33 | 42s | 1.35s | 81.4s | 1.37s | — | — |
 | **Dia (Nari)** | 35s | 2.92 | — | — | — | — | 35s | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | 4s | 14s |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | 12s | — |
@@ -26,8 +26,8 @@ Personal benchmark of open-source / local text-to-speech models.
 | **Higgs** | — | — | — | — | — | — | — | — |
 | **Kokoro** | — | — | — | — | — | — | — | — |
 | **XTTS** | — | — | — | — | — | — | — | — |
-| **Sesame CSM** | ❌ | ❌ | — | — | — | — | — | — |
-| **GPT-SoVITS** | ❌ | ❌ | — | — | — | — | — | — |
+| **Sesame CSM** | — | — | — | — | — | — | — | — |
+| **GPT-SoVITS** | — | — | — | — | — | — | — | — |
 | **ChatTTS** | — | — | — | — | — | — | — | — |
 | **IndexTTS2** | — | — | — | — | — | — | — | — |
 | **Fish Speech** | — | — | — | — | — | — | — | — |
