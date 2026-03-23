@@ -49,7 +49,7 @@ Personal benchmark of open-source / local text-to-speech models.
 
 | Model | Emotions | Expressiveness | Consistency | Not Trailing | Voice Cloning | Clone Quality | Difficulty |
 |---|---|---|---|---|---|---|---|
-| **Bark** | — | — | — | — | — | — | — |
+| **Bark** | 4.5 | 2.5 | 2.0 | 2.5 | No | — | 1.0 |
 | **Dia (Nari)** | 4.5 | 4.5 | 1.5 | 3.5 | Yes | 2.0 | 1.0 |
 | **F5-TTS** | — | 3.0 | 4.5 | 5.0 | Yes | 4.5 | 2.0 |
 | **Orpheus** | 2.5 | 2.5 | 5.0 | 3.0 | No | — | 2.0 |
@@ -61,8 +61,8 @@ Personal benchmark of open-source / local text-to-speech models.
 | **Higgs** | — | — | — | — | — | — | — |
 | **Kokoro** | — | — | — | — | — | — | — |
 | **XTTS** | — | — | — | — | — | — | — |
-| **Sesame CSM** | ❌ | ❌ | ❌ | ❌ | — | — | 5.0 |
-| **GPT-SoVITS** | ❌ | ❌ | ❌ | ❌ | — | — | 5.0 |
+| **Sesame CSM** | — | — | — | — | — | — | 5.0 |
+| **GPT-SoVITS** | — | — | — | — | — | — | 5.0 |
 | **ChatTTS** | — | — | — | — | — | — | — |
 | **IndexTTS2** | — | — | — | — | — | — | 5.0 |
 | **Fish Speech** | — | — | — | — | — | — | — |
