@@ -14,7 +14,7 @@ Personal benchmark of open-source / local text-to-speech models.
 
 | Model | 12s Time | 12s RTF | 30s Time | 30s RTF | 60s Time | 60s RTF | App Speed | CLI Speed |
 |---|---|---|---|---|---|---|---|---|
-| **Bark** | 16s | 1.33 | — | — | — | — | — | — |
+| **Bark** | 16.4s | 1.33 | — | — | — | — | — | — |
 | **Dia (Nari)** | 35s | 2.92 | — | — | — | — | 35s | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | 4s | 14s |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | 12s | — |
@@ -86,21 +86,95 @@ Personal benchmark of open-source / local text-to-speech models.
 
 One male and one female sample per model, generated from the same test prompt.
 
-> Audio files are stored in `samples/<model>/`.
+### Bark
 
-| Model | Female Sample | Male Sample |
-|---|---|---|
-| **Bark** | [female.wav](samples/bark/female.wav) | [male.wav](samples/bark/male.wav) |
-| **Dia (Nari)** | [female.wav](samples/dia/female.wav) | [male.wav](samples/dia/male.wav) |
-| **F5-TTS** | [female.wav](samples/f5_tts/female.wav) | [male.wav](samples/f5_tts/male.wav) |
-| **Orpheus** | [female.wav](samples/orpheus/female.wav) | [male.wav](samples/orpheus/male.wav) |
-| **Chatterbox** | [female.wav](samples/chatterbox/female.wav) | [male.wav](samples/chatterbox/male.wav) |
-| **Coqui TTS** | [female.wav](samples/coqui/female.wav) | [male.wav](samples/coqui/male.wav) |
-| **OpenVoice** | [female.wav](samples/openvoice/female.wav) | [male.wav](samples/openvoice/male.wav) |
-| **Kyutai** | [female.wav](samples/kyutai/female.wav) | [male.wav](samples/kyutai/male.wav) |
-| **Kyutai-Mimi** | [female.wav](samples/kyutai_mimi/female.wav) | [male.wav](samples/kyutai_mimi/male.wav) |
+**Female** (en_speaker_9)
 
-> Click a link to open the file on GitHub — it will show an inline audio player.
+<audio controls src="samples/bark/female.wav"></audio>
+
+**Male** (en_speaker_6)
+
+<audio controls src="samples/bark/male.wav"></audio>
+
+### Dia (Nari)
+
+**Female**
+
+<audio controls src="samples/dia/female.wav"></audio>
+
+**Male**
+
+<audio controls src="samples/dia/male.wav"></audio>
+
+### F5-TTS
+
+**Female**
+
+<audio controls src="samples/f5_tts/female.wav"></audio>
+
+**Male**
+
+<audio controls src="samples/f5_tts/male.wav"></audio>
+
+### Orpheus
+
+**Female**
+
+<audio controls src="samples/orpheus/female.wav"></audio>
+
+**Male**
+
+<audio controls src="samples/orpheus/male.wav"></audio>
+
+### Chatterbox
+
+**Female**
+
+<audio controls src="samples/chatterbox/female.wav"></audio>
+
+**Male**
+
+<audio controls src="samples/chatterbox/male.wav"></audio>
+
+### Coqui TTS
+
+**Female**
+
+<audio controls src="samples/coqui/female.wav"></audio>
+
+**Male**
+
+<audio controls src="samples/coqui/male.wav"></audio>
+
+### OpenVoice
+
+**Female**
+
+<audio controls src="samples/openvoice/female.wav"></audio>
+
+**Male**
+
+<audio controls src="samples/openvoice/male.wav"></audio>
+
+### Kyutai
+
+**Female**
+
+<audio controls src="samples/kyutai/female.wav"></audio>
+
+**Male**
+
+<audio controls src="samples/kyutai/male.wav"></audio>
+
+### Kyutai-Mimi
+
+**Female**
+
+<audio controls src="samples/kyutai_mimi/female.wav"></audio>
+
+**Male**
+
+<audio controls src="samples/kyutai_mimi/male.wav"></audio>
 
 ---
 
