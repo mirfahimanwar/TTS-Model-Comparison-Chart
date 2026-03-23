@@ -1,0 +1,131 @@
+# Local TTS Model Comparison
+
+Personal benchmark of open-source / local text-to-speech models.
+
+**Hardware:** NVIDIA RTX 4090 Laptop GPU  
+**Test prompt:** *"The quick brown fox jumped over the lazy dog. She laughed softly and said — well, that was unexpected. [sighs] I suppose we'll just have to try again."*
+
+---
+
+## Speed — Real-Time Factor (RTF)
+
+> **RTF = Generation Time ÷ Audio Length**  
+> RTF < 1.0 = faster than real-time | RTF = 1.0 = real-time | RTF > 1.0 = slower
+
+| Model | 12s Time | 12s RTF | 30s Time | 30s RTF | 60s Time | 60s RTF | App Speed | CLI Speed |
+|---|---|---|---|---|---|---|---|---|
+| **Bark** | — | — | — | — | — | — | — | — |
+| **Dia (Nari)** | 35s | 2.92 | — | — | — | — | 35s | — |
+| **F5-TTS** | 4s | 0.33 | — | — | — | — | 4s | 14s |
+| **Orpheus** | 12s | 1.00 | — | — | — | — | 12s | — |
+| **Chatterbox** | 20s | 1.67 | — | — | — | — | 20s | — |
+| **Coqui TTS** | 52s | 4.33 | — | — | — | — | 52s | — |
+| **OpenVoice** | 19s | 1.58 | — | — | — | — | 19s | — |
+| **Kyutai** | 12s | 1.00 | — | — | — | — | — | 12s |
+| **Kyutai-Mimi** | 12s | 1.00 | — | — | — | — | — | 12s |
+| **Higgs** | — | — | — | — | — | — | — | — |
+| **Kokoro** | — | — | — | — | — | — | — | — |
+| **XTTS** | — | — | — | — | — | — | — | — |
+| **Sesame CSM** | ❌ | ❌ | — | — | — | — | — | — |
+| **GPT-SoVITS** | ❌ | ❌ | — | — | — | — | — | — |
+| **ChatTTS** | — | — | — | — | — | — | — | — |
+| **IndexTTS2** | — | — | — | — | — | — | — | — |
+| **Fish Speech** | — | — | — | — | — | — | — | — |
+| **FireRedTTS** | — | — | — | — | — | — | — | — |
+| **CosyVoice2** | — | — | — | — | — | — | — | — |
+| **MaskGCT** | — | — | — | — | — | — | — | — |
+| **Zonos** | — | — | — | — | — | — | — | — |
+| **AllTalk TTS** | — | — | — | — | — | — | — | — |
+
+> App Speed = measured in the model's own UI/webapp. CLI Speed = measured via command-line script.  
+> `—` = not yet benchmarked. `❌` = could not get running.
+
+---
+
+## Quality Ratings
+
+> All scores out of 5. Higher is better.  
+> **Difficulty** = ease of install: 1 = one-click easy, 5 = failed to get running.
+
+| Model | Emotions | Expressiveness | Consistency | Not Trailing | Voice Cloning | Clone Quality | Difficulty |
+|---|---|---|---|---|---|---|---|
+| **Bark** | — | — | — | — | — | — | — |
+| **Dia (Nari)** | 4.5 | 4.5 | 1.5 | 3.5 | Yes | 2.0 | 1.0 |
+| **F5-TTS** | — | 3.0 | 4.5 | 5.0 | Yes | 4.5 | 2.0 |
+| **Orpheus** | 2.5 | 2.5 | 5.0 | 3.0 | No | — | 2.0 |
+| **Chatterbox** | — | 3.0 | 5.0 | 5.0 | Yes | 5.0 | 1.5 |
+| **Coqui TTS** | 2.5 | 3.0 | 1.0 | 2.0 | Yes | 2.5 | 3.0 |
+| **OpenVoice** | 1.0 | 2.0 | 3.5 | 2.0 | Yes | 2.0 | 2.0 |
+| **Kyutai** | — | 4.0 | 5.0 | 5.0 | No | — | 3.0 |
+| **Kyutai-Mimi** | — | 2.0 | 5.0 | 5.0 | Yes | 2.0 | 4.0 |
+| **Higgs** | — | — | — | — | — | — | — |
+| **Kokoro** | — | — | — | — | — | — | — |
+| **XTTS** | — | — | — | — | — | — | — |
+| **Sesame CSM** | ❌ | ❌ | ❌ | ❌ | — | — | 5.0 |
+| **GPT-SoVITS** | ❌ | ❌ | ❌ | ❌ | — | — | 5.0 |
+| **ChatTTS** | — | — | — | — | — | — | — |
+| **IndexTTS2** | — | — | — | — | — | — | 5.0 |
+| **Fish Speech** | — | — | — | — | — | — | — |
+| **FireRedTTS** | — | — | — | — | — | — | — |
+| **CosyVoice2** | — | — | — | — | — | — | — |
+| **MaskGCT** | — | — | — | — | — | — | — |
+| **Zonos** | — | — | — | — | — | — | — |
+| **AllTalk TTS** | — | — | — | — | — | — | — |
+
+**Column definitions:**
+- **Emotions** — can it express different emotional tones (happy, sad, angry, etc.)
+- **Expressiveness** — how natural and varied the delivery sounds
+- **Consistency** — does the voice stay stable across multiple generations
+- **Not Trailing** — does audio end cleanly without silence/noise at the end
+- **Clone Quality** — how well it reproduces a reference voice (if supported)
+- **Difficulty** — 1 = runs out of the box, 5 = could not get working
+
+---
+
+## Audio Samples
+
+One male and one female sample per model, generated from the same test prompt.
+
+> Audio files are stored in `samples/<model>/`.
+
+| Model | Female Sample | Male Sample |
+|---|---|---|
+| **Bark** | [female.wav](samples/bark/female.wav) | [male.wav](samples/bark/male.wav) |
+| **Dia (Nari)** | [female.wav](samples/dia/female.wav) | [male.wav](samples/dia/male.wav) |
+| **F5-TTS** | [female.wav](samples/f5_tts/female.wav) | [male.wav](samples/f5_tts/male.wav) |
+| **Orpheus** | [female.wav](samples/orpheus/female.wav) | [male.wav](samples/orpheus/male.wav) |
+| **Chatterbox** | [female.wav](samples/chatterbox/female.wav) | [male.wav](samples/chatterbox/male.wav) |
+| **Coqui TTS** | [female.wav](samples/coqui/female.wav) | [male.wav](samples/coqui/male.wav) |
+| **OpenVoice** | [female.wav](samples/openvoice/female.wav) | [male.wav](samples/openvoice/male.wav) |
+| **Kyutai** | [female.wav](samples/kyutai/female.wav) | [male.wav](samples/kyutai/male.wav) |
+| **Kyutai-Mimi** | [female.wav](samples/kyutai_mimi/female.wav) | [male.wav](samples/kyutai_mimi/male.wav) |
+
+> Click a link to open the file on GitHub — it will show an inline audio player.
+
+---
+
+## Model Repos
+
+Each model lives in its own subfolder with a `setup.ps1` one-click installer and its own `venv/`.
+
+| Model | Folder | Status |
+|---|---|---|
+| Bark | [BarkTTS/](BarkTTS/) | ✅ Ready |
+| Dia (Nari) | [DiaTTS/](DiaTTS/) | — |
+| F5-TTS | — | — |
+| Orpheus | — | — |
+| Chatterbox | — | — |
+| Coqui TTS | — | — |
+| OpenVoice | — | — |
+| Kyutai | — | — |
+| Kyutai-Mimi | — | — |
+
+---
+
+## Notes
+
+- All benchmarks run on **NVIDIA RTX 4090 Laptop GPU** with models loaded fresh (no warm-up cache)
+- RTF measured as wall-clock time from command submission to wav file written
+- Quality scores are subjective — tested on the same 4–5 sentences per model
+- `—` = not yet tested | `❌` = could not get running after reasonable effort
+- 30s and 60s RTF columns will be filled in as each model is benchmarked
