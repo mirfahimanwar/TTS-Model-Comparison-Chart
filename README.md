@@ -15,7 +15,7 @@ Personal benchmark of open-source / local text-to-speech models.
 | Model | 12s Time | 12s RTF | 30s Time | 30s RTF | 60s Time | 60s RTF | App Speed | CLI Speed |
 |---|---|---|---|---|---|---|---|---|
 | **Bark** | 16.4s | 1.33 | 42s | 1.35s | 81.4s | 1.37s | — | — |
-| **Dia (Nari)** | 35s | 2.92 | — | — | — | — | 35s | — |
+| **Dia (Nari)** | 36s | 3.01 | — | — | — | — | 35s | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | 4s | 14s |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | 12s | — |
 | **Chatterbox** | 20s | 1.67 | — | — | — | — | 20s | — |
@@ -47,10 +47,10 @@ Personal benchmark of open-source / local text-to-speech models.
 > All scores out of 5. Higher is better.  
 > **Difficulty** = ease of install: 1 = one-click easy, 5 = failed to get running.
 
-| Model | Emotions | Expressiveness | Consistency | Not Trailing | Voice Cloning | Clone Quality | Difficulty |
+| Model | Emotions | Expressiveness | Consistency | No Trailing | Voice Cloning | Clone Quality | Difficulty |
 |---|---|---|---|---|---|---|---|
-| **Bark** | 4.5 | 2.5 | 2.0 | 2.5 | No | — | 1.0 |
-| **Dia (Nari)** | 4.5 | 4.5 | 1.5 | 3.5 | Yes | 2.0 | 1.0 |
+| **Bark** | 4.0 | 2.5 | 2.0 | 2.5 | No | — | 1.0 |
+| **Dia (Nari)** | 4.0 | 3.0 | 2.0 | 4.0 | Yes | 2.0 | 1.0 |
 | **F5-TTS** | — | 3.0 | 4.5 | 5.0 | Yes | 4.5 | 2.0 |
 | **Orpheus** | 2.5 | 2.5 | 5.0 | 3.0 | No | — | 2.0 |
 | **Chatterbox** | — | 3.0 | 5.0 | 5.0 | Yes | 5.0 | 1.5 |
