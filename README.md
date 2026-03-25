@@ -16,6 +16,7 @@ Personal benchmark of open-source / local text-to-speech models.
 |---|---|---|---|---|---|---|---|---|---|
 | **Bark** | 16.4s | 1.33 | 42s | 1.35 | 81.4s | 1.37s |  | — | — |
 | **Dia (Nari)** | 27.6 | 2.2 | 64.9s | 2.16 | — | — | — | 35s | — |
+| **Dia2 (Nari)** | — | — | — | — | — | — | — | — | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — | 4s | 14s |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — | 12s | — |
 | **Chatterbox** | 20s | 1.67 | — | — | — | — | — | 20s | — |
@@ -95,6 +96,7 @@ Click a link → GitHub opens the file page with an inline audio player.
 |---|---|---|
 | **Bark** | [▶ female](samples/bark/female.wav) (en_speaker_9) | [▶ male](samples/bark/male.wav) (en_speaker_6) |
 | **Dia (Nari)** | [▶ female](samples/dia/female.wav) | [▶ male](samples/dia/male.wav) |
+| **Dia2 (Nari)** | — | — |
 | **F5-TTS** | [▶ female](samples/f5_tts/female.wav) | [▶ male](samples/f5_tts/male.wav) |
 | **Orpheus** | [▶ female](samples/orpheus/female.wav) | [▶ male](samples/orpheus/male.wav) |
 | **Chatterbox** | [▶ female](samples/chatterbox/female.wav) | [▶ male](samples/chatterbox/male.wav) |
@@ -102,6 +104,19 @@ Click a link → GitHub opens the file page with an inline audio player.
 | **OpenVoice** | [▶ female](samples/openvoice/female.wav) | [▶ male](samples/openvoice/male.wav) |
 | **Kyutai** | [▶ female](samples/kyutai/female.wav) | [▶ male](samples/kyutai/male.wav) |
 | **Kyutai-Mimi** | [▶ female](samples/kyutai_mimi/female.wav) | [▶ male](samples/kyutai_mimi/male.wav) |
+| **Higgs** | — | — |
+| **Kokoro** | — | — |
+| **XTTS** | — | — |
+| **Sesame CSM** | — | — |
+| **GPT-SoVITS** | — | — |
+| **ChatTTS** | — | — |
+| **IndexTTS2** | — | — |
+| **Fish Speech** | — | — |
+| **FireRedTTS** | — | — |
+| **CosyVoice2** | — | — |
+| **MaskGCT** | — | — |
+| **Zonos** | — | — |
+| **AllTalk TTS** | — | — |
 
 ---
 
@@ -113,7 +128,7 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 |---|---|---|
 | Bark | [BarkTTS/](BarkTTS/) | ✅ Ready |
 | Dia (Nari) | [DiaTTS/](DiaTTS/) | ✅ Ready |
-| Dia2 (Nari) | [DiaTTS/](DiaTTS/) | ✅ Ready |
+| Dia2 (Nari) | [Dia2TTS/](Dia2TTS/) | ✅ Ready |
 | F5-TTS | — | — |
 | Orpheus | — | — |
 | Chatterbox | — | — |
@@ -121,6 +136,19 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | OpenVoice | — | — |
 | Kyutai | — | — |
 | Kyutai-Mimi | — | — |
+| Higgs | — | — |
+| Kokoro | — | — |
+| XTTS | — | — |
+| Sesame CSM | — | — |
+| GPT-SoVITS | — | — |
+| ChatTTS | — | — |
+| IndexTTS2 | — | — |
+| Fish Speech | — | — |
+| FireRedTTS | — | — |
+| CosyVoice2 | — | — |
+| MaskGCT | — | — |
+| Zonos | — | — |
+| AllTalk TTS | — | — |
 
 ---
 
