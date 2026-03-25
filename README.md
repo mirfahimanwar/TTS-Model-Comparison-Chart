@@ -112,7 +112,8 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | Model | Folder | Status |
 |---|---|---|
 | Bark | [BarkTTS/](BarkTTS/) | ✅ Ready |
-| Dia (Nari) | [DiaTTS/](DiaTTS/) | — |
+| Dia (Nari) | [DiaTTS/](DiaTTS/) | ✅ Ready |
+| Dia2 (Nari) | [DiaTTS/](DiaTTS/) | ✅ Ready |
 | F5-TTS | — | — |
 | Orpheus | — | — |
 | Chatterbox | — | — |
