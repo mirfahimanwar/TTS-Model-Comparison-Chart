@@ -1,7 +1,0 @@
-dia2/
-venv/
-output/
-__pycache__/
-*.pyc
-*.pyo
-.env
