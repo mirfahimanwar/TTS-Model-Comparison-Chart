@@ -12,30 +12,30 @@ Personal benchmark of open-source / local text-to-speech models.
 > **RTF = Generation Time ÷ Audio Length**  
 > RTF < 1.0 = faster than real-time | RTF = 1.0 = real-time | RTF > 1.0 = slower
 
-| Model | 12s Time | 12s RTF | 30s Time | 30s RTF | 60s Time | 60s RTF | App Speed | CLI Speed |
-|---|---|---|---|---|---|---|---|---|
-| **Bark** | 16.4s | 1.33 | 42s | 1.35s | 81.4s | 1.37s | — | — |
-| **Dia (Nari)** | 36s | 3.01 | — | — | — | — | 35s | — |
-| **F5-TTS** | 4s | 0.33 | — | — | — | — | 4s | 14s |
-| **Orpheus** | 12s | 1.00 | — | — | — | — | 12s | — |
-| **Chatterbox** | 20s | 1.67 | — | — | — | — | 20s | — |
-| **Coqui TTS** | 52s | 4.33 | — | — | — | — | 52s | — |
-| **OpenVoice** | 19s | 1.58 | — | — | — | — | 19s | — |
-| **Kyutai** | 12s | 1.00 | — | — | — | — | — | 12s |
-| **Kyutai-Mimi** | 12s | 1.00 | — | — | — | — | — | 12s |
-| **Higgs** | — | — | — | — | — | — | — | — |
-| **Kokoro** | — | — | — | — | — | — | — | — |
-| **XTTS** | — | — | — | — | — | — | — | — |
-| **Sesame CSM** | — | — | — | — | — | — | — | — |
-| **GPT-SoVITS** | — | — | — | — | — | — | — | — |
-| **ChatTTS** | — | — | — | — | — | — | — | — |
-| **IndexTTS2** | — | — | — | — | — | — | — | — |
-| **Fish Speech** | — | — | — | — | — | — | — | — |
-| **FireRedTTS** | — | — | — | — | — | — | — | — |
-| **CosyVoice2** | — | — | — | — | — | — | — | — |
-| **MaskGCT** | — | — | — | — | — | — | — | — |
-| **Zonos** | — | — | — | — | — | — | — | — |
-| **AllTalk TTS** | — | — | — | — | — | — | — | — |
+| Model | 12s Time | 12s RTF | 30s Time | 30s RTF | 60s Time | 60s RTF | VRAM Usage | App Speed | CLI Speed |
+|---|---|---|---|---|---|---|---|---|---|
+| **Bark** | 16.4s | 1.33 | 42s | 1.35 | 81.4s | 1.37s |  | — | — |
+| **Dia (Nari)** | 27.6 | 2.2 | 64.9s | 2.16 | — | — | — | 35s | — |
+| **F5-TTS** | 4s | 0.33 | — | — | — | — | — | 4s | 14s |
+| **Orpheus** | 12s | 1.00 | — | — | — | — | — | 12s | — |
+| **Chatterbox** | 20s | 1.67 | — | — | — | — | — | 20s | — |
+| **Coqui TTS** | 52s | 4.33 | — | — | — | — | — | 52s | — |
+| **OpenVoice** | 19s | 1.58 | — | — | — | — | — | 19s | — |
+| **Kyutai** | 12s | 1.00 | — | — | — | — | — | — | 12s |
+| **Kyutai-Mimi** | 12s | 1.00 | — | — | — | — | — | — | 12s |
+| **Higgs** | — | — | — | — | — | — | — | — | — |
+| **Kokoro** | — | — | — | — | — | — | — | — | — |
+| **XTTS** | — | — | — | — | — | — | — | — | — |
+| **Sesame CSM** | — | — | — | — | — | — | — | — | — |
+| **GPT-SoVITS** | — | — | — | — | — | — | — | — | — |
+| **ChatTTS** | — | — | — | — | — | — | — | — | — |
+| **IndexTTS2** | — | — | — | — | — | — | — | — | — |
+| **Fish Speech** | — | — | — | — | — | — | — | — | — |
+| **FireRedTTS** | — | — | — | — | — | — | — | — | — |
+| **CosyVoice2** | — | — | — | — | — | — | — | — | — |
+| **MaskGCT** | — | — | — | — | — | — | — | — | — |
+| **Zonos** | — | — | — | — | — | — | — | — | — |
+| **AllTalk TTS** | — | — | — | — | — | — | — | — | — |
 
 > App Speed = measured in the model's own UI/webapp. CLI Speed = measured via command-line script.  
 > `—` = not yet benchmarked. `❌` = could not get running.
@@ -47,36 +47,40 @@ Personal benchmark of open-source / local text-to-speech models.
 > All scores out of 5. Higher is better.  
 > **Difficulty** = ease of install: 1 = one-click easy, 5 = failed to get running.
 
-| Model | Emotions | Expressiveness | Consistency | No Trailing | Voice Cloning | Clone Quality | Difficulty |
-|---|---|---|---|---|---|---|---|
-| **Bark** | 4.0 | 2.5 | 2.0 | 2.5 | No | — | 1.0 |
-| **Dia (Nari)** | 4.0 | 3.0 | 2.0 | 4.0 | Yes | 2.0 | 1.0 |
-| **F5-TTS** | — | 3.0 | 4.5 | 5.0 | Yes | 4.5 | 2.0 |
-| **Orpheus** | 2.5 | 2.5 | 5.0 | 3.0 | No | — | 2.0 |
-| **Chatterbox** | — | 3.0 | 5.0 | 5.0 | Yes | 5.0 | 1.5 |
-| **Coqui TTS** | 2.5 | 3.0 | 1.0 | 2.0 | Yes | 2.5 | 3.0 |
-| **OpenVoice** | 1.0 | 2.0 | 3.5 | 2.0 | Yes | 2.0 | 2.0 |
-| **Kyutai** | — | 4.0 | 5.0 | 5.0 | No | — | 3.0 |
-| **Kyutai-Mimi** | — | 2.0 | 5.0 | 5.0 | Yes | 2.0 | 4.0 |
-| **Higgs** | — | — | — | — | — | — | — |
-| **Kokoro** | — | — | — | — | — | — | — |
-| **XTTS** | — | — | — | — | — | — | — |
-| **Sesame CSM** | — | — | — | — | — | — | 5.0 |
-| **GPT-SoVITS** | — | — | — | — | — | — | 5.0 |
-| **ChatTTS** | — | — | — | — | — | — | — |
-| **IndexTTS2** | — | — | — | — | — | — | 5.0 |
-| **Fish Speech** | — | — | — | — | — | — | — |
-| **FireRedTTS** | — | — | — | — | — | — | — |
-| **CosyVoice2** | — | — | — | — | — | — | — |
-| **MaskGCT** | — | — | — | — | — | — | — |
-| **Zonos** | — | — | — | — | — | — | — |
-| **AllTalk TTS** | — | — | — | — | — | — | — |
+| Model | Emotions | Expressiveness | Consistency | No Trailing | No Cutoff | Realism | Voice Cloning | Clone Quality | Difficulty |
+|---|---|---|---|---|---|---|---|---|---|
+| **Bark** | 4.0 | 2.5 | 2.0 | 2.5 | 3.0 | — | No | — | 1.0 |
+| **Dia (Nari)** | 4.0 | 3.0 | 2.0 | 4.0 | 3.0 | 3.5 | Yes | 2.5 | 1.0 |
+| **Dia2 (Nari)** | 4.0 | 3.0 | 2.0 | 4.0 | 3.0 | 3.5 | Yes | 2.0 | 1.0 |
+| **F5-TTS** | — | 3.0 | 4.5 | 5.0 | — | — | Yes | 4.5 | 2.0 |
+| **Orpheus** | 2.5 | 2.5 | 5.0 | 3.0 | — | — | No | — | 2.0 |
+| **Chatterbox** | — | 3.0 | 5.0 | 5.0 | — | — | Yes | 5.0 | 1.5 |
+| **Coqui TTS** | 2.5 | 3.0 | 1.0 | 2.0 | — | — | Yes | 2.5 | 3.0 |
+| **OpenVoice** | 1.0 | 2.0 | 3.5 | 2.0 | — | — | Yes | 2.0 | 2.0 |
+| **Kyutai** | — | 4.0 | 5.0 | 5.0 | — | — | No | — | 3.0 |
+| **Kyutai-Mimi** | — | 2.0 | 5.0 | 5.0 | — | — | Yes | 2.0 | 4.0 |
+| **Higgs** | — | — | — | — | — | — | — | — | — |
+| **Kokoro** | — | — | — | — | — | — | — | — | — |
+| **XTTS** | — | — | — | — | — | — | — | — | — |
+| **Sesame CSM** | — | — | — | — | — | — | — | — | 5.0 |
+| **GPT-SoVITS** | — | — | — | — | — | — | — | — | 5.0 |
+| **ChatTTS** | — | — | — | — | — | — | — | — | — |
+| **IndexTTS2** | — | — | — | — | — | — | — | — | 5.0 |
+| **Fish Speech** | — | — | — | — | — | — | — | — | — |
+| **FireRedTTS** | — | — | — | — | — | — | — | — | — |
+| **CosyVoice2** | — | — | — | — | — | — | — | — | — |
+| **MaskGCT** | — | — | — | — | — | — | — | — | — |
+| **Zonos** | — | — | — | — | — | — | — | — | — |
+| **AllTalk TTS** | — | — | — | — | — | — | — | — | — |
 
 **Column definitions:**
 - **Emotions** — can it express different emotional tones (happy, sad, angry, etc.)
 - **Expressiveness** — how natural and varied the delivery sounds
 - **Consistency** — does the voice stay stable across multiple generations
-- **Not Trailing** — does audio end cleanly without silence/noise at the end
+- **No Trailing** — does audio end cleanly without silence/noise after the speech
+- **No Cutoff** — does speech complete fully without words being cut off at the end
+- **Realism** — how human and lifelike the voice sounds (naturalness of prosody, breath, tone)
+- **Voice Cloning** — supports cloning a voice from a reference audio file
 - **Clone Quality** — how well it reproduces a reference voice (if supported)
 - **Difficulty** — 1 = runs out of the box, 5 = could not get working
 
