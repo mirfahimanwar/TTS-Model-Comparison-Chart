@@ -1,0 +1,4 @@
+# Each TTS CLI has its own separate repo -- don't track them here
+BarkTTS/
+DiaTTS/
+Dia2TTS/
