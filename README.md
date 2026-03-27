@@ -18,6 +18,7 @@ Personal benchmark of open-source / local text-to-speech models.
 | **Dia (Nari)** | 27.6 | 2.2 | 64.9s | 2.16 | — | — | — | 35s | — |
 | **Dia2 (Nari)** | — | — | — | — | — | — | — | — | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — | 4s | 14s |
+| **Orpheus - CLI** | 25.6s | 2.2 | 57.4s | 1.9 | — | — | — | 12s | — |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — | 12s | — |
 | **Chatterbox** | 20s | 1.67 | — | — | — | — | — | 20s | — |
 | **Coqui TTS** | 52s | 4.33 | — | — | — | — | — | 52s | — |
@@ -37,6 +38,8 @@ Personal benchmark of open-source / local text-to-speech models.
 | **MaskGCT** | — | — | — | — | — | — | — | — | — |
 | **Zonos** | — | — | — | — | — | — | — | — | — |
 | **AllTalk TTS** | — | — | — | — | — | — | — | — | — |
+| **Qwen3-TTS** | — | — | — | — | — | — | — | — | — |
+| **MegaTTS 3** | — | — | — | — | — | — | — | — | — |
 
 > App Speed = measured in the model's own UI/webapp. CLI Speed = measured via command-line script.  
 > `—` = not yet benchmarked. `❌` = could not get running.
@@ -73,6 +76,8 @@ Personal benchmark of open-source / local text-to-speech models.
 | **MaskGCT** | — | — | — | — | — | — | — | — | — |
 | **Zonos** | — | — | — | — | — | — | — | — | — |
 | **AllTalk TTS** | — | — | — | — | — | — | — | — | — |
+| **Qwen3-TTS** | — | — | — | — | — | — | Yes | — | — |
+| **MegaTTS 3** | — | — | — | — | — | — | Yes | — | — |
 
 **Column definitions:**
 - **Emotions** — can it express different emotional tones (happy, sad, angry, etc.)
@@ -117,6 +122,8 @@ Click a link → GitHub opens the file page with an inline audio player.
 | **MaskGCT** | — | — |
 | **Zonos** | — | — |
 | **AllTalk TTS** | — | — |
+| **Qwen3-TTS** | — | — |
+| **MegaTTS 3** | — | — |
 
 ---
 
@@ -130,7 +137,7 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | Dia (Nari) | [DiaTTS/](DiaTTS/) | ✅ Ready |
 | Dia2 (Nari) | [Dia2TTS/](Dia2TTS/) | ✅ Ready |
 | F5-TTS | — | — |
-| Orpheus | — | — |
+| Orpheus | [Orpheus/](Orpheus/) | ✅ Ready (requires HF login — see Orpheus/README.md) |
 | Chatterbox | — | — |
 | Coqui TTS | — | — |
 | OpenVoice | — | — |
@@ -143,12 +150,27 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | GPT-SoVITS | — | — |
 | ChatTTS | — | — |
 | IndexTTS2 | — | — |
-| Fish Speech | — | — |
+| Fish Speech S2 Pro | [FishAudioS2ProTTS/](FishAudioS2ProTTS/) | ✅ Ready |
 | FireRedTTS | — | — |
 | CosyVoice2 | — | — |
 | MaskGCT | — | — |
 | Zonos | — | — |
 | AllTalk TTS | — | — |
+| Qwen3-TTS | — | — |
+| MegaTTS 3 | — | — |
+
+**Community Recommended — Not Yet Benchmarked:**
+
+| Model | Notes |
+|---|---|
+| MOSS-TTS | OpenMOSS-Team/MOSS-TTS — open weights, emotion control |
+| HumeAI/tada | Cloud API only (requires account) |
+| SoulX | Soul-AILab/SoulX — expressive, HuggingFace weights |
+| VibeVoice | microsoft/VibeVoice |
+| Neuphonic | neuphonic/neutts — cloud API only |
+| Supertone-2 | Supertone/supertonic-2 |
+| maya-research | Community recommendation, limited info |
+| kittenTTS | Community recommendation, limited info |
 
 ---
 
@@ -159,3 +181,40 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 - Quality scores are subjective — tested on the same 4–5 sentences per model
 - `—` = not yet tested | `❌` = could not get running after reasonable effort
 - 30s and 60s RTF columns will be filled in as each model is benchmarked
+
+---
+
+## Expressive TTS — Emotion Tag Index
+
+Which models support inline emotion tags that produce **real audio events** (not just prosody changes).
+
+| Model | Emotion Tags | Tag Format | Sample Tags | VRAM | Voice Cloning |
+|---|---|---|---|---|---|
+| **Dia / Dia2** | ✅ 21 tags | `(laughs)` | `(laughs)` `(cries)` `(gasps)` `(sighs)` `(growls)` `(groans)` `(screams)` | 4–5 GB | ✅ |
+| **Orpheus** | ✅ 8 tags | `<laugh>` | `<laugh>` `<sigh>` `<gasp>` `<groan>` `<cough>` `<sniffle>` `<yawn>` `<chuckle>` | 6–8 GB | ❌ |
+| **Bark** | ⚠️ limited | `[laughter]` | `[laughter]` `[sighs]` `[clears throat]` | 6–8 GB | ❌ |
+| **Fish Speech S2 Pro** | ⚠️ subtle | `[sighs]` | Tags present but produce mild prosody changes only | 14–15 GB | ✅ |
+| **Higgs Audio v2** | ✅ emergent | none needed | Pass `instruct=` or embed emotion in text | 24 GB | ✅ |
+| **Qwen3-TTS** | ✅ NL instructions | none needed | `instruct="speak with excitement"` | 3–8 GB | ✅ |
+| **MegaTTS 3** | ❌ | none | No tag support — prosody via voice clone only | 8–16 GB | ✅ |
+| **Chatterbox** | ❌ | none | Emotion via `exaggeration=` parameter (0.0–2.0) | 4–6 GB | ✅ |
+
+### Best pick by use case
+
+| Goal | Best Model | Why |
+|---|---|---|
+| Most emotion tags + local | **Dia2** | 21 tags, 4.4 GB, runs well on low VRAM |
+| Laugh/cry/gasp audibly | **Orpheus** | Tags produce actual audio events, not just tone |
+| No tags, emergent emotion | **Higgs Audio v2** | State-of-the-art EmergentTTS benchmark, 24 GB |
+| NL-based emotion control | **Qwen3-TTS** | Natural language instruction, 3–8 GB |
+| Voice clone + emotion | **Dia2** | Best combo of tags + clone quality at low VRAM |
+
+### Dia tag list (21 total)
+
+`(laughs)` `(chuckles)` `(giggles)` `(cries)` `(sobs)` `(sighs)` `(gasps)` `(screams)`  
+`(moans)` `(groans)` `(growls)` `(sniffs)` `(yawns)` `(coughs)` `(clears throat)`  
+`(whistles)` `(mumbles)` `(stutters)` `(hums)` `(shouts)` `(whispers)`
+
+### Orpheus tag list (8 total)
+
+`<laugh>` `<chuckle>` `<sigh>` `<cough>` `<sniffle>` `<groan>` `<yawn>` `<gasp>`
