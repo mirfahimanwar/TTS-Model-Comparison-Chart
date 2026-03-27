@@ -18,7 +18,7 @@ Personal benchmark of open-source / local text-to-speech models.
 | **Dia (Nari)** | 27.6 | 2.2 | 64.9s | 2.16 | — | — | — | 35s | — |
 | **Dia2 (Nari)** | — | — | — | — | — | — | — | — | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — | 4s | 14s |
-| **Orpheus - CLI** | 25.6s | 2.2 | 57.4s | 1.9 | — | — | — | 12s | — |
+| **Orpheus - CLI** | 25.6s | 2.2 | 66.4s | 2.2 | — | — | 8.4 GB | 12s | — |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — | 12s | — |
 | **Chatterbox** | 20s | 1.67 | — | — | — | — | — | 20s | — |
 | **Coqui TTS** | 52s | 4.33 | — | — | — | — | — | 52s | — |
