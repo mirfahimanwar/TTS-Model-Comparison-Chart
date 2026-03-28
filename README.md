@@ -22,6 +22,7 @@ Personal benchmark of open-source / local text-to-speech models.
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — | 12s | — |
 | **Chatterbox** | 24 | 1.67 | — | — | — | — | — | 20s | — |
 | **Chatterbox - rsxdalv fast** | 6s | .5 | — | — | — | — | — | 20s | — |
+| **VibeVoice** | 11 | .92 | 28.2s | .94 | 57s | .95 | 1.4 GB | — | — |
 | **Coqui TTS** | 52s | 4.33 | — | — | — | — | — | 52s | — |
 | **OpenVoice** | 19s | 1.58 | — | — | — | — | — | 19s | — |
 | **Kyutai** | 12s | 1.00 | — | — | — | — | — | — | 12s |
@@ -61,6 +62,7 @@ Personal benchmark of open-source / local text-to-speech models.
 | **Orpheus - CLI** | 2.0 | 3.0 | 4.0 | 4.5 | 4.5 | 4.0 | No | — | 1.0 |
 | **Orpheus** | 2.5 | 2.5 | 4.0 | 3.0 | — | — | No | — | 2.0 |
 | **Chatterbox** | — | 3.0 | 5.0 | 5.0 | — | — | Yes | 5.0 | 1.5 |
+| **VibeVoice** | 0 | 2.0 | 3.5 | 4.5 | 4.5 | 2.0 | Yes | 3.5 | 1.0 |
 | **Coqui TTS** | 2.5 | 3.0 | 1.0 | 2.0 | — | — | Yes | 2.5 | 3.0 |
 | **OpenVoice** | 1.0 | 2.0 | 3.5 | 2.0 | — | — | Yes | 2.0 | 2.0 |
 | **Kyutai** | — | 4.0 | 5.0 | 5.0 | — | — | No | — | 3.0 |
@@ -126,6 +128,7 @@ Click a link → GitHub opens the file page with an inline audio player.
 | **AllTalk TTS** | — | — |
 | **Qwen3-TTS** | — | — |
 | **MegaTTS 3** | — | — |
+| **VibeVoice** | — | — |
 
 ---
 
@@ -141,6 +144,7 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | F5-TTS | — | — |
 | Orpheus | [Orpheus/](Orpheus/) | ✅ Ready (requires HF login — see Orpheus/README.md) |
 | Chatterbox | [ChatterboxTTS/](ChatterboxTTS/) | ✅ Ready |
+| VibeVoice | [VibeVoiceTTS/](VibeVoiceTTS/) | ✅ Ready (research only — see VibeVoiceTTS/README.md) |
 | Coqui TTS | — | — |
 | OpenVoice | — | — |
 | Kyutai | — | — |
@@ -168,7 +172,7 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | MOSS-TTS | OpenMOSS-Team/MOSS-TTS — open weights, emotion control |
 | HumeAI/tada | Cloud API only (requires account) |
 | SoulX | Soul-AILab/SoulX — expressive, HuggingFace weights |
-| VibeVoice | microsoft/VibeVoice |
+| ~~VibeVoice~~ | ~~microsoft/VibeVoice~~ — now in [VibeVoiceTTS/](VibeVoiceTTS/) |
 | Neuphonic | neuphonic/neutts — cloud API only |
 | Supertone-2 | Supertone/supertonic-2 |
 | maya-research | Community recommendation, limited info |
