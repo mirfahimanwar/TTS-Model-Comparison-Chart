@@ -20,7 +20,8 @@ Personal benchmark of open-source / local text-to-speech models.
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — | 4s | 14s |
 | **Orpheus - CLI** | 25.6s | 2.2 | 66.4s | 2.2 | — | — | 8.4 GB | 12s | — |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — | 12s | — |
-| **Chatterbox** | 20s | 1.67 | — | — | — | — | — | 20s | — |
+| **Chatterbox** | 24 | 1.67 | — | — | — | — | — | 20s | — |
+| **Chatterbox - rsxdalv fast** | 6s | .5 | — | — | — | — | — | 20s | — |
 | **Coqui TTS** | 52s | 4.33 | — | — | — | — | — | 52s | — |
 | **OpenVoice** | 19s | 1.58 | — | — | — | — | — | 19s | — |
 | **Kyutai** | 12s | 1.00 | — | — | — | — | — | — | 12s |
@@ -139,7 +140,7 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | Dia2 (Nari) | [Dia2TTS/](Dia2TTS/) | ✅ Ready |
 | F5-TTS | — | — |
 | Orpheus | [Orpheus/](Orpheus/) | ✅ Ready (requires HF login — see Orpheus/README.md) |
-| Chatterbox | — | — |
+| Chatterbox | [ChatterboxTTS/](ChatterboxTTS/) | ✅ Ready |
 | Coqui TTS | — | — |
 | OpenVoice | — | — |
 | Kyutai | — | — |
