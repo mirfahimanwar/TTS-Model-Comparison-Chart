@@ -15,7 +15,7 @@ Personal benchmark of open-source / local text-to-speech models.
 | Model | 12s Time | 12s RTF | 30s Time | 30s RTF | 60s Time | 60s RTF | VRAM Usage | App Speed | CLI Speed |
 |---|---|---|---|---|---|---|---|---|---|
 | **Bark** | 16.4s | 1.33 | 42s | 1.35 | 81.4s | 1.37s |  | — | — |
-| **Dia (Nari)** | 27.6 | 2.2 | 64.9s | 2.16 | — | — | — | 35s | — |
+| **Dia (Nari) - robertagee** | 27.6 | 2.2 | 64.9s | 2.16 | — | — | — | 35s | — |
 | **Dia2 (Nari)** | — | — | — | — | — | — | — | — | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — | 4s | 14s |
 | **Orpheus - CLI** | 25.6s | 2.2 | 66.4s | 2.2 | — | — | 8.4 GB | 12s | — |
