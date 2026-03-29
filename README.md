@@ -9,13 +9,13 @@ Personal benchmark of open-source / local text-to-speech models.
 
 ## Model Reviews
 
-Personal notes on each model after hands-on testing. 
+Personal notes on each model after hands-on testing. Real Time Factor (RTF) refers to Generation Time divided by Generated Audio Time. I.E: If it takes 60 seconds to generate 30 seconds of audio, its RTF would be 2. The lower the RTF the faster the response.
 
 ---
 
 ### Bark
 
-Although Bark natively doesn't support cloning, there is a 'bark with voice clone' repo that's included with this project. The voice cloning works, but isn't the best. The voice resembles the cloned one, but changes slightly every generation so it's not the most consistent. It can be fun, quirky, and expressive when you get lucky — but wildly inconsistent. As far as cloning goes the emotion tags (`[laughter]`, `[sighs]`) work sometimes and produce genuinely surprising results, but never quite know what you'll get. Voice cloning is limited; the `.npz` approach works but the clone just barely sounds close to the reference. It can also sometimes switch voices too, for example, if you clone a female voice, you may get a male voice, although rare in my testing, but still noteworthy to mention. Best used for creative/character TTS where some randomness is acceptable, not for production or narration work.
+Although the main Bark repo doesn't natively support voice cloning itself, there is a 'bark-with-voice-clone' repo that I included with the one click installer. The voice cloning does work, but it isn't the best. The voice does somewhat resemble the cloned one, but changes slightly every generation so it's not the most consistent - almost as if you varied your own voice everytime you talk, but with a different starting voice. Anyways, It can be fun, quirky, and expressive when you get lucky — but oftentimes inconsistent. As far as voice cloning goes - the emotion tags (`[laughter]`, `[sighs]`, etc.) work sometimes and can produce surprising results, but you never quite know what you'll get. Sometimes (with voice cloning) it may skip emotion tags entirely. I will say though, it's kinda impressive it can take a voice (without laughing, sighing, etc) and relatively apply those emotions to a voice that wasn't trained on it. Voice cloning is limited; the `.npz` approach works but the clone just barely sounds close to the reference. It can also sometimes switch voices too, for example, if you clone a female voice, you may get a male voice, although rare in my testing, but still noteworthy to mention. Otherwise, it isn't really that expressive. It sounds almost half robotic and half human. Best used for creative/character TTS where some randomness is acceptable, not for production, narration work, or voice assistants. It's also not the fastest, nor the slowest either with 1.35 RTF. Note: Although the official repository seems to use brackets for emotions tags, I've found that parenthesis seem to be better. Using the brackets increases the chances it'll sound less like the voice clone and vary the voice more. The voice cloning also increases the RTF from 1.35 to about 1.43 as well. Longer sentences can increase the likelihood that the voice deviates, but there is a --rolling flag that I added in you can use - meaning - it should use the context of the voice prior to the chunking, but this doesn't always work the best. There is also a pre-existing --seed flag you can use as well which allows you to use the seed you liked for reproducability to mitigate these issues.
 
 ---
 
@@ -117,6 +117,7 @@ Not yet tested.
 | Model | 12s Time | 12s RTF | 30s Time | 30s RTF | 60s Time | 60s RTF | VRAM Usage |
 |---|---|---|---|---|---|---|---|
 | **Bark** | 16.4s | 1.33 | 42s | 1.35 | 81.4s | 1.37s | 5.8 GB |
+| **Bark (Voice Clone)** | 16.9s | 1.41 | 42.9s | 1.43 | 85.2s | 1.42s | 5.8 GB |
 | **Dia (Nari) - robertagee** | 27.6s | 2.2 | 64.9s | 2.16 | — | — | — |
 | **Dia2 (Nari)** | — | — | — | — | — | — | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — |
@@ -156,7 +157,8 @@ Not yet tested.
 
 | Model | Emotion Tags | Emotions | Expressiveness | Consistency | No Trailing | No Cutoff | Realism | Voice Cloning | Clone Quality | Difficulty |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Bark** | Yes | 4.0 | 2.5 | 2.0 | 2.5 | 3.0 | — | Yes | — | 1.0 |
+| **Bark** | No | - | 2.5 | 2.0 | 2.5 | 3.0 | — | Yes | — | 1.0 |
+| **Bark (Voice Clone)** | Yes | 3.0 | 2.5 | 2.0 | 4.5 | 4.5 | 2.5 | Yes | 1.5 | 1.0 |
 | **Dia (Nari)** | Yes | 4.0 | 3.0 | 2.0 | 4.0 | 3.0 | 3.5 | Yes | 2.5 | 1.0 |
 | **Dia2 (Nari)** | Yes | 4.0 | 3.0 | 2.0 | 4.0 | 3.0 | 3.5 | Yes | 2.0 | 1.0 |
 | **F5-TTS** | No | — | 3.0 | 4.5 | 5.0 | — | — | Yes | 4.5 | 2.0 |
@@ -186,7 +188,7 @@ Not yet tested.
 
 **Column definitions:**
 - **Emotion Tags** — supports emotion/tone markup tags in input text (e.g. `[laughs]`, `(whispers)`, `<happy>`)
-- **Emotions** — can it express different emotional tones via tags (happy, sad, angry, etc.)
+- **Emotions** — how well and consistent it can express different emotional tones via tags (happy, sad, angry, etc.)
 - **Expressiveness** — how natural and varied the delivery sounds
 - **Consistency** — does the voice stay stable across multiple generations
 - **No Trailing** — does audio end cleanly without silence/noise after the speech
@@ -238,15 +240,15 @@ Click a link → GitHub opens the file page with an inline audio player.
 
 Each model lives in its own subfolder with a `setup.ps1` one-click installer and its own `venv/`.
 
-| Model | Folder | Status |
+| Model | Status | GitHub |
 |---|---|---|
-| Bark | [BarkTTS/](BarkTTS/) | ✅ Ready |
-| Dia (Nari) | [DiaTTS/](DiaTTS/) | ✅ Ready |
-| Dia2 (Nari) | [Dia2TTS/](Dia2TTS/) | ✅ Ready |
+| Bark | ✅ Ready | [Bark_TTS_CLI_Local](https://github.com/mirfahimanwar/Bark_TTS_CLI_Local) |
+| Dia (Nari) | ✅ Ready | [Dia-TTS-CLI-Local](https://github.com/mirfahimanwar/Dia-TTS-CLI-Local) |
+| Dia2 (Nari) | ✅ Ready | [Dia-2-TTS-CLI-Local](https://github.com/mirfahimanwar/Dia-2-TTS-CLI-Local) |
 | F5-TTS | — | — |
-| Orpheus | [Orpheus/](Orpheus/) | ✅ Ready (requires HF login — see Orpheus/README.md) |
-| Chatterbox | [ChatterboxTTS/](ChatterboxTTS/) | ✅ Ready |
-| VibeVoice | [VibeVoiceTTS/](VibeVoiceTTS/) | ✅ Ready (research only — see VibeVoiceTTS/README.md) |
+| Orpheus | ✅ Ready (requires HF login) | [Orpheus-TTS-CLI-Local](https://github.com/mirfahimanwar/Orpheus-TTS-CLI-Local) |
+| Chatterbox | ✅ Ready | [Chatterbox-TTS-CLI-Local](https://github.com/mirfahimanwar/Chatterbox-TTS-CLI-Local) |
+| VibeVoice | ✅ Ready (research only) | — |
 | Coqui TTS | — | — |
 | OpenVoice | — | — |
 | Kyutai | — | — |
@@ -258,7 +260,7 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | GPT-SoVITS | — | — |
 | ChatTTS | — | — |
 | IndexTTS2 | — | — |
-| Fish Speech S2 Pro | [FishAudioS2ProTTS/](FishAudioS2ProTTS/) | ✅ Ready |
+| Fish Speech S2 Pro | ✅ Ready | — |
 | FireRedTTS | — | — |
 | CosyVoice2 | — | — |
 | MaskGCT | — | — |
