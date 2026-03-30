@@ -15,7 +15,7 @@ Personal notes on each model after hands-on testing. Real Time Factor (RTF) refe
 
 ### Bark
 
-Although the main Bark repo doesn't natively support voice cloning itself, there is a 'bark-with-voice-clone' repo that I included with the one click installer. The voice cloning does work, but it isn't the best. The voice does somewhat resemble the cloned one, but changes slightly every generation so it's not the most consistent - almost as if you varied your own voice everytime you talk, but with a different starting voice. Anyways, It can be fun, quirky, and expressive when you get lucky — but oftentimes inconsistent. As far as voice cloning goes - the emotion tags (`[laughter]`, `[sighs]`, etc.) work sometimes and can produce surprising results, but you never quite know what you'll get. Sometimes (with voice cloning) it may skip emotion tags entirely. I will say though, it's kinda impressive it can take a voice (without laughing, sighing, etc) and relatively apply those emotions to a voice that wasn't trained on it. Voice cloning is limited; the `.npz` approach works but the clone just barely sounds close to the reference. It can also sometimes switch voices too, for example, if you clone a female voice, you may get a male voice, although rare in my testing, but still noteworthy to mention. Otherwise, it isn't really that expressive. It sounds almost half robotic and half human. Best used for creative/character TTS where some randomness is acceptable, not for production, narration work, or voice assistants. It's also not the fastest, nor the slowest either with 1.35 RTF. Note: Although the official repository seems to use brackets for emotions tags, I've found that parenthesis seem to be better. Using the brackets increases the chances it'll sound less like the voice clone and vary the voice more. The voice cloning also increases the RTF from 1.35 to about 1.43 as well. Longer sentences can increase the likelihood that the voice deviates, but there is a --rolling flag that I added in you can use - meaning - it should use the context of the voice prior to the chunking, but this doesn't always work the best. There is also a pre-existing --seed flag you can use as well which allows you to use the seed you liked for reproducability to mitigate these issues.
+Although the main Bark repo doesn't natively support voice cloning itself, there is a 'bark-with-voice-clone' repo that I included with the one click installer. The voice cloning does work, but it isn't the best. The voice does somewhat resemble the cloned one, but changes slightly every generation so it's not the most consistent - almost as if you varied your own voice everytime you talk, but with a different starting voice. Anyways, It can be fun, quirky, and expressive when you get lucky — but oftentimes inconsistent. As far as voice cloning goes - the emotion tags (`[laughter]`, `[sighs]`, etc.) work sometimes and can produce surprising results, but you never quite know what you'll get. Sometimes (with voice cloning) it may skip emotion tags entirely. I will say though, it's kinda impressive it can take a voice (without laughing, sighing, etc) and relatively apply those emotions to a voice that wasn't trained on it. Voice cloning is limited; the `.npz` approach works but the clone just barely sounds close to the reference. It can also sometimes switch voices too, for example, if you clone a female voice, you may get a male voice, although rare in my testing, but still noteworthy to mention. Otherwise, it isn't really that expressive. It sounds almost half robotic and half human. It does work a little better without voice cloning though, if you don't mind the presest voices, which there's quite a few of. Best used for creative/character TTS where some randomness is acceptable, not for production, narration work, or voice assistants. It's also not the fastest, nor the slowest either with 1.35 RTF. Note: Although the official repository seems to use brackets for emotions tags, I've found that parenthesis seem to be better. Using the brackets increases the chances it'll sound less like the voice clone and vary the voice more. The voice cloning also increases the RTF from 1.35 to about 1.43 as well. Longer sentences can increase the likelihood that the voice deviates, but there is a --rolling flag that I added in you can use - meaning - it should use the context of the voice prior to the chunking, but this doesn't always work the best. There is also a pre-existing --seed flag you can use as well which allows you to use the seed you liked for reproducability to mitigate these issues. Voices are more consistent if don't use voice cloning.
 
 ---
 
@@ -155,43 +155,44 @@ Not yet tested.
 > All scores out of 5. Higher is better.  
 > **Difficulty** = ease of install: 1 = one-click easy, 5 = failed to get running.
 
-| Model | Emotion Tags | Emotions | Expressiveness | Consistency | No Trailing | No Cutoff | Realism | Voice Cloning | Clone Quality | Difficulty |
-|---|---|---|---|---|---|---|---|---|---|---|
-| **Bark** | No | - | 2.5 | 2.0 | 2.5 | 3.0 | — | Yes | — | 1.0 |
-| **Bark (Voice Clone)** | Yes | 3.0 | 2.5 | 2.0 | 4.5 | 4.5 | 2.5 | Yes | 1.5 | 1.0 |
-| **Dia (Nari)** | Yes | 4.0 | 3.0 | 2.0 | 4.0 | 3.0 | 3.5 | Yes | 2.5 | 1.0 |
-| **Dia2 (Nari)** | Yes | 4.0 | 3.0 | 2.0 | 4.0 | 3.0 | 3.5 | Yes | 2.0 | 1.0 |
-| **F5-TTS** | No | — | 3.0 | 4.5 | 5.0 | — | — | Yes | 4.5 | 2.0 |
-| **Orpheus - CLI** | Yes | 2.0 | 3.0 | 4.0 | 4.5 | 4.5 | 4.0 | No | — | 1.0 |
-| **Orpheus** | Yes | 2.5 | 2.5 | 4.0 | 3.0 | — | — | No | — | 2.0 |
-| **Chatterbox** | No | — | 3.0 | 5.0 | 5.0 | — | — | Yes | 5.0 | 1.5 |
-| **VibeVoice** | No | 0 | 2.0 | 3.5 | 4.5 | 4.5 | 2.0 | Yes | 3.5 | 1.0 |
-| **Coqui TTS** | — | 2.5 | 3.0 | 1.0 | 2.0 | — | — | Yes | 2.5 | 3.0 |
-| **OpenVoice** | — | 1.0 | 2.0 | 3.5 | 2.0 | — | — | Yes | 2.0 | 2.0 |
-| **Kyutai** | — | — | 4.0 | 5.0 | 5.0 | — | — | No | — | 3.0 |
-| **Kyutai-Mimi** | — | — | 2.0 | 5.0 | 5.0 | — | — | Yes | 2.0 | 4.0 |
-| **Higgs** | — | — | — | — | — | — | — | — | — | — |
-| **Kokoro** | — | — | — | — | — | — | — | — | — | — |
-| **XTTS** | — | — | — | — | — | — | — | — | — | — |
-| **Sesame CSM** | — | — | — | — | — | — | — | — | — | 5.0 |
-| **GPT-SoVITS** | — | — | — | — | — | — | — | — | — | 5.0 |
-| **ChatTTS** | — | — | — | — | — | — | — | — | — | — |
-| **IndexTTS2** | — | — | — | — | — | — | — | — | — | 5.0 |
-| **Fish Speech** | — | — | — | — | — | — | — | — | — | — |
-| **FireRedTTS** | — | — | — | — | — | — | — | — | — | — |
-| **CosyVoice2** | — | — | — | — | — | — | — | — | — | — |
-| **MaskGCT** | — | — | — | — | — | — | — | — | — | — |
-| **Zonos** | — | — | — | — | — | — | — | — | — | — |
-| **AllTalk TTS** | — | — | — | — | — | — | — | — | — | — |
-| **Qwen3-TTS** | — | — | — | — | — | — | — | Yes | — | — |
-| **MegaTTS 3** | — | — | — | — | — | — | — | Yes | — | — |
+| Model | Emotion Tags | Emotions | Expressiveness | Consistency | No Artifacts | No Trailing | No Cutoff | Realism | Voice Cloning | Clone Quality | Difficulty |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Bark** | Yes | 3.0 | 2.5 | 3.5 | 3.0 | 4.5 | 4.5 | 2.5 | No | — | 1.0 |
+| **Bark (Voice Clone)** | Yes | 2.5 | 2.0 | 2.0 | 3.0 | 4.5 | 4.5 | 2.5 | Yes | 1.5 | 1.0 |
+| **Dia (Nari)** | Yes | 4.0 | 3.0 | 2.0 | — | 4.0 | 3.0 | 3.5 | Yes | 2.5 | 1.0 |
+| **Dia2 (Nari)** | Yes | 4.0 | 3.0 | 2.0 | — | 4.0 | 3.0 | 3.5 | Yes | 2.0 | 1.0 |
+| **F5-TTS** | No | — | 3.0 | 4.5 | — | 5.0 | — | — | Yes | 4.5 | 2.0 |
+| **Orpheus - CLI** | Yes | 2.0 | 3.0 | 4.0 | — | 4.5 | 4.5 | 4.0 | No | — | 1.0 |
+| **Orpheus** | Yes | 2.5 | 2.5 | 4.0 | — | 3.0 | — | — | No | — | 2.0 |
+| **Chatterbox** | No | — | 3.0 | 5.0 | — | 5.0 | — | — | Yes | 5.0 | 1.5 |
+| **VibeVoice** | No | 0 | 2.0 | 3.5 | — | 4.5 | 4.5 | 2.0 | Yes | 3.5 | 1.0 |
+| **Coqui TTS** | — | 2.5 | 3.0 | 1.0 | — | 2.0 | — | — | Yes | 2.5 | 3.0 |
+| **OpenVoice** | — | 1.0 | 2.0 | 3.5 | — | 2.0 | — | — | Yes | 2.0 | 2.0 |
+| **Kyutai** | — | — | 4.0 | 5.0 | — | 5.0 | — | — | No | — | 3.0 |
+| **Kyutai-Mimi** | — | — | 2.0 | 5.0 | — | 5.0 | — | — | Yes | 2.0 | 4.0 |
+| **Higgs** | — | — | — | — | — | — | — | — | — | — | — |
+| **Kokoro** | — | — | — | — | — | — | — | — | — | — | — |
+| **XTTS** | — | — | — | — | — | — | — | — | — | — | — |
+| **Sesame CSM** | — | — | — | — | — | — | — | — | — | — | 5.0 |
+| **GPT-SoVITS** | — | — | — | — | — | — | — | — | — | — | 5.0 |
+| **ChatTTS** | — | — | — | — | — | — | — | — | — | — | — |
+| **IndexTTS2** | — | — | — | — | — | — | — | — | — | — | 5.0 |
+| **Fish Speech** | — | — | — | — | — | — | — | — | — | — | — |
+| **FireRedTTS** | — | — | — | — | — | — | — | — | — | — | — |
+| **CosyVoice2** | — | — | — | — | — | — | — | — | — | — | — |
+| **MaskGCT** | — | — | — | — | — | — | — | — | — | — | — |
+| **Zonos** | — | — | — | — | — | — | — | — | — | — | — |
+| **AllTalk TTS** | — | — | — | — | — | — | — | — | — | — | — |
+| **Qwen3-TTS** | — | — | — | — | — | — | — | — | Yes | — | — |
+| **MegaTTS 3** | — | — | — | — | — | — | — | — | Yes | — | — |
 
 **Column definitions:**
 - **Emotion Tags** — supports emotion/tone markup tags in input text (e.g. `[laughs]`, `(whispers)`, `<happy>`)
 - **Emotions** — how well and consistent it can express different emotional tones via tags (happy, sad, angry, etc.)
 - **Expressiveness** — how natural and varied the delivery sounds
-- **Consistency** — does the voice stay stable across multiple generations
-- **No Trailing** — does audio end cleanly without silence/noise after the speech
+- **Consistency** — does the voice stay stable and consistent across multiple generations
+- **No Artifacts** — absence of digital glitches, clicks, static, distortion, or unnatural audio discontinuities mid-speech
+- **No Trailing** — does audio end cleanly without silence/noise or random noise after the speech
 - **No Cutoff** — does speech complete fully without words being cut off at the end
 - **Realism** — how human and lifelike the voice sounds (naturalness of prosody, breath, tone)
 - **Voice Cloning** — supports cloning a voice from a reference audio file
