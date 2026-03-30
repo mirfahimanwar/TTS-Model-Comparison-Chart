@@ -119,7 +119,7 @@ Not yet tested.
 | **Bark (Voice Clone)** | 16.9s | 1.41 | 42.9s | 1.43 | 85.2s | 1.42s | 5.8 GB |
 | **Dia - robertagee** | 27.6s | 2.2 | 64.9s | 2.16 | — | — | — |
 | **Dia (Voice Clone) - robertagee** | 27.6s | 2.2 | 64.9s | 2.16 | — | — | — |
-| **Dia - (Voice Clone) - robertagee (--compile)** | 9.4s | **0.77** | — | — | — | — | — |
+| **Dia - (Voice Clone) - robertagee (--compile)** | 9.4s | **0.77** | 23.1s | **0.77** | 47s | **0.78** | 6.2 GB |
 | **Dia2** | — | — | — | — | — | — | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — |
 | **Orpheus - CLI** | 25.6s | 2.2 | 66.4s | 2.2 | — | — | 8.4 GB |
