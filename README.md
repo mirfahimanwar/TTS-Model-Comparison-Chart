@@ -22,6 +22,7 @@ Although the main Bark repo doesn't natively support voice cloning itself, there
 ### Dia — robertagee
 
 This is the best emotion-tag model I've tested locally. Twenty-one tags that produce real audio events — laughs, gasps, sighs, etc.  — not just tone shifts. Some of the tags don't work that well with voice cloning, however. The one's that don't work as well have already been tested and are listed in the main one click installer repo I created. Voice cloning via a reference transcript also works well. It can be slow at ~2.2× RTF, but the expressiveness payoff is worth it for short clips as well as the decent clone quality. Consistency is pretty solid as well.. It's not the best, but it does sound like the cloned voice, and keeps it's likeness throughout generations. If you want it to be faster, you can use the --compile flag which uses torch.compile to optimize. This brings RTF down to a whopping .77! Faster than real time! Although that doesn't mean it responds right away, it just means that the audio takes less time to generate than the clip is long. The expressiveness is very advanced. Almost too advanced. By that, I mean, it almost takes away it's human likeness because it's too expressive at times. But if you want a fun, expressive voice, then this is a great model to use. If this model was paired with the speed of Kokoro it'd be very hard to beat. Pair it with F5's voice cloning ability, and it becomes SOTA in my opinion.
+
 ---
 
 ### Dia2
@@ -161,7 +162,7 @@ Not yet tested.
 | **Bark** | Yes | 3.0 | 2.5 | 3.5 | 3.0 | 4.5 | 4.5 | 2.5 | No | — | 1.0 |
 | **Bark (Voice Clone)** | Yes | 2.5 | 2.0 | 2.0 | 3.0 | 4.5 | 4.5 | 2.5 | Yes | 1.5 | 1.0 |
 | **Dia** | Yes | 4.0 | 3.0 | 2.0 | — | 4.0 | 3.0 | 3.5 | Yes | 2.5 | 1.0 |
-| **Dia (Voice Clone) - robertagee ** | Yes | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 3.5 | 3.5 | Yes | 3.5 | 1.0 |
+| **Dia (Voice Clone) - robertagee** | Yes | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 3.5 | 3.5 | Yes | 3.5 | 1.0 |
 | **Dia (Voice Clone) - robertagee (--compile)** | Yes | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | Yes | 3.5 | 1.0 |
 | **Dia2** | Yes | 4.0 | 3.0 | 2.0 | — | 4.0 | 3.0 | 3.5 | Yes | 2.0 | 1.0 |
 | **F5-TTS** | No | — | 3.0 | 4.5 | — | 5.0 | — | — | Yes | 4.5 | 2.0 |
