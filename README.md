@@ -19,13 +19,12 @@ Although the main Bark repo doesn't natively support voice cloning itself, there
 
 ---
 
-### Dia (Nari) — robertagee
+### Dia — robertagee
 
-The best emotion-tag model I've tested locally. Twenty-one tags that produce real audio events — laughs, cries, gasps, sighs, growls — not just tone shifts. Voice cloning via a reference transcript also works well. Slow at ~2.2× RTF, but the expressiveness payoff is worth it for short clips. Consistency is a weak spot; re-running the same text gives noticeably different deliveries.
-
+This is the best emotion-tag model I've tested locally. Twenty-one tags that produce real audio events — laughs, gasps, sighs, etc.  — not just tone shifts. Some of the tags don't work that well with voice cloning, however. The one's that don't work as well have already been tested and are listed in the main one click installer repo I created. Voice cloning via a reference transcript also works well. It can be slow at ~2.2× RTF, but the expressiveness payoff is worth it for short clips as well as the decent clone quality. Consistency is pretty solid as well.. It's not the best, but it does sound like the cloned voice, and keeps it's likeness throughout generations. If you want it to be faster, you can use the --compile flag which uses torch.compile to optimize. This brings RTF down to a whopping .77! Faster than real time! Although that doesn't mean it responds right away, it just means that the audio takes less time to generate than the clip is long. The expressiveness is very advanced. Almost too advanced. By that, I mean, it almost takes away it's human likeness because it's too expressive at times. But if you want a fun, expressive voice, then this is a great model to use. If this model was paired with the speed of Kokoro it'd be very hard to beat. Pair it with F5's voice cloning ability, and it becomes SOTA in my opinion.
 ---
 
-### Dia2 (Nari)
+### Dia2
 
 Same architecture as Dia with similar quality. Slightly less reliable clone quality in my tests. Keeping both around to compare.
 
@@ -118,8 +117,10 @@ Not yet tested.
 |---|---|---|---|---|---|---|---|
 | **Bark** | 16.4s | 1.33 | 42s | 1.35 | 81.4s | 1.37s | 5.8 GB |
 | **Bark (Voice Clone)** | 16.9s | 1.41 | 42.9s | 1.43 | 85.2s | 1.42s | 5.8 GB |
-| **Dia (Nari) - robertagee** | 27.6s | 2.2 | 64.9s | 2.16 | — | — | — |
-| **Dia2 (Nari)** | — | — | — | — | — | — | — |
+| **Dia - robertagee** | 27.6s | 2.2 | 64.9s | 2.16 | — | — | — |
+| **Dia (Voice Clone) - robertagee** | 27.6s | 2.2 | 64.9s | 2.16 | — | — | — |
+| **Dia - (Voice Clone) - robertagee (--compile)** | 9.4s | **0.77** | — | — | — | — | — |
+| **Dia2** | — | — | — | — | — | — | — |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — |
 | **Orpheus - CLI** | 25.6s | 2.2 | 66.4s | 2.2 | — | — | 8.4 GB |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — |
@@ -159,8 +160,10 @@ Not yet tested.
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | **Bark** | Yes | 3.0 | 2.5 | 3.5 | 3.0 | 4.5 | 4.5 | 2.5 | No | — | 1.0 |
 | **Bark (Voice Clone)** | Yes | 2.5 | 2.0 | 2.0 | 3.0 | 4.5 | 4.5 | 2.5 | Yes | 1.5 | 1.0 |
-| **Dia (Nari)** | Yes | 4.0 | 3.0 | 2.0 | — | 4.0 | 3.0 | 3.5 | Yes | 2.5 | 1.0 |
-| **Dia2 (Nari)** | Yes | 4.0 | 3.0 | 2.0 | — | 4.0 | 3.0 | 3.5 | Yes | 2.0 | 1.0 |
+| **Dia** | Yes | 4.0 | 3.0 | 2.0 | — | 4.0 | 3.0 | 3.5 | Yes | 2.5 | 1.0 |
+| **Dia (Voice Clone) - robertagee ** | Yes | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 3.5 | 3.5 | Yes | 3.5 | 1.0 |
+| **Dia (Voice Clone) - robertagee (--compile)** | Yes | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | Yes | 3.5 | 1.0 |
+| **Dia2** | Yes | 4.0 | 3.0 | 2.0 | — | 4.0 | 3.0 | 3.5 | Yes | 2.0 | 1.0 |
 | **F5-TTS** | No | — | 3.0 | 4.5 | — | 5.0 | — | — | Yes | 4.5 | 2.0 |
 | **Orpheus - CLI** | Yes | 2.0 | 3.0 | 4.0 | — | 4.5 | 4.5 | 4.0 | No | — | 1.0 |
 | **Orpheus** | Yes | 2.5 | 2.5 | 4.0 | — | 3.0 | — | — | No | — | 2.0 |
@@ -209,8 +212,8 @@ Click a link → GitHub opens the file page with an inline audio player.
 | Model | Female | Male |
 |---|---|---|
 | **Bark** | [▶ female](samples/bark/female.wav) (en_speaker_9) | [▶ male](samples/bark/male.wav) (en_speaker_6) |
-| **Dia (Nari)** | [▶ female](samples/dia/female.wav) | [▶ male](samples/dia/male.wav) |
-| **Dia2 (Nari)** | — | — |
+| **Dia** | [▶ female](samples/dia/female.wav) | [▶ male](samples/dia/male.wav) |
+| **Dia2** | — | — |
 | **F5-TTS** | [▶ female](samples/f5_tts/female.wav) | [▶ male](samples/f5_tts/male.wav) |
 | **Orpheus** | [▶ female](samples/orpheus/female.wav) | [▶ male](samples/orpheus/male.wav) |
 | **Chatterbox** | [▶ female](samples/chatterbox/female.wav) | [▶ male](samples/chatterbox/male.wav) |
@@ -244,8 +247,8 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | Model | Status | GitHub |
 |---|---|---|
 | Bark | ✅ Ready | [Bark_TTS_CLI_Local](https://github.com/mirfahimanwar/Bark_TTS_CLI_Local) |
-| Dia (Nari) | ✅ Ready | [Dia-TTS-CLI-Local](https://github.com/mirfahimanwar/Dia-TTS-CLI-Local) |
-| Dia2 (Nari) | ✅ Ready | [Dia-2-TTS-CLI-Local](https://github.com/mirfahimanwar/Dia-2-TTS-CLI-Local) |
+| Dia | ✅ Ready | [Dia-TTS-CLI-Local](https://github.com/mirfahimanwar/Dia-TTS-CLI-Local) |
+| Dia2 | ✅ Ready | [Dia-2-TTS-CLI-Local](https://github.com/mirfahimanwar/Dia-2-TTS-CLI-Local) |
 | F5-TTS | — | — |
 | Orpheus | ✅ Ready (requires HF login) | [Orpheus-TTS-CLI-Local](https://github.com/mirfahimanwar/Orpheus-TTS-CLI-Local) |
 | Chatterbox | ✅ Ready | [Chatterbox-TTS-CLI-Local](https://github.com/mirfahimanwar/Chatterbox-TTS-CLI-Local) |
