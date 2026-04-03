@@ -31,6 +31,12 @@ Actually way worse than Dia. Not sure why. I even installed Triton and it uses C
 
 ---
 
+### Fun-CosyVoice3
+
+This is a very interesting & unique model! While it doesn't have as many emotion tags (like Dia or Bark), the one's it does have are pretty decent. But not only does it have emotion tags like laughter, or cough, quick cough, etc. it also has emotion dictating, where you can give it a tag like "anger", "whisper", "fast" or "slow", and it'll make the whole sentence sound that way, like it's yelling, talking quietly, etc. There hasn't been another TTS I've tested so far with this ability. I will say it doesn't work the best though. The "anger" one in particular doesn't always sound like it's yelling, but sometimes more like it's annoyed. It can vary, but generally gets it close. The voice is pretty consistent throughout several generations as well, which is nice. So far, it only varies very slightly, so it should always sound like the same speaker. As far as the voice clone quality, it's pretty close. Definitely recognizable from the original cloned speaker. While it can be expressive, and is good at making the cloned original speaker sounding like it's laughing, angry etc. in it's original cloned voice (which is really impressive actually since it wasn't trained on it and only cloned a few seconds in a "one shot" clone), it does sound bland and robotic at times. Not as natural as human. But still, would recommend this model for character creation and alike. It just may take a few generations to get it perfect. The best thing about this model is it's the fastest emotion capable and voice cloning model yet! With an RTF around .5 to .6 ~ about half real time! If you're generating longer audio, and need emotion and specific voices this is a very good choice for that reason. Because of it's lower RTF it also makes it a contender for a voice assitant as well, although there will be some delay - especially the longer the audio since it's about .6 RTF.
+
+---
+
 ### F5-TTS
 
 Fastest model in the lineup by a wide margin (RTF 0.33). Voice cloning is excellent — easily the best clone quality I've tested (4.5/5). No emotion tags, purely neutral TTS, but the voice reproduction is remarkably clean. Great pick when you need fast, high-quality cloned speech without any expressiveness requirements.
@@ -122,6 +128,7 @@ Not yet tested.
 | **Dia (Voice Clone) - robertagee** | 27.6s | 2.2 | 64.9s | 2.16 | — | — | — |
 | **Dia - (Voice Clone) - robertagee (--compile)** | 9.4s | **0.77** | 23.1s | **0.77** | 47s | **0.78** | 6.2 GB |
 | **Dia2** | 44.4 | 3.7 | — | — | — | — | — |
+| **CosyVoice3** | 7.5 | **.63** | 17.1 | **.62** | — | — | 4.5 GB |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — |
 | **Orpheus - CLI** | 25.6s | 2.2 | 66.4s | 2.2 | — | — | 8.4 GB |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — |
@@ -165,6 +172,7 @@ Not yet tested.
 | **Dia (Voice Clone) - robertagee** | Yes | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 3.5 | 3.5 | Yes | 3.5 | 1.0 |
 | **Dia (Voice Clone) - robertagee (--compile)** | Yes | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | 4.0 | Yes | 3.5 | 1.0 |
 | **Dia2** | Yes | 1.0 | 2.0 | 2.0 | 0.5 | 2.0 | 3.0 | 0.5 | Yes | 0.0 | 4.0 |
+| **Fun-CosyVoice3** | Yes | 3.0 | 4.5 | 3.5 | 4.0 | 4.0 | 4.0 | 3.5 | Yes | 3.5 | — |
 | **F5-TTS** | No | — | 3.0 | 4.5 | — | 5.0 | — | — | Yes | 4.5 | 2.0 |
 | **Orpheus - CLI** | Yes | 2.0 | 3.0 | 4.0 | — | 4.5 | 4.5 | 4.0 | No | — | 1.0 |
 | **Orpheus** | Yes | 2.5 | 2.5 | 4.0 | — | 3.0 | — | — | No | — | 2.0 |
