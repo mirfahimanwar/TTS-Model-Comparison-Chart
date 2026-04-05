@@ -45,7 +45,7 @@ Fastest model in the lineup by a wide margin (RTF 0.33). Voice cloning is excell
 
 ### Orpheus
 
-Solid expressive model with eight clearly audible emotion tags via `<laugh>`, `<sigh>`, etc. The tags produce actual audio events, not just prosody shifts. Consistency is good (4.0/5) and realism is the highest I've rated at 4.0. No voice cloning support. CLI version is slower than the app version — worth measuring. Best choice when you want reliable, realistic delivery with light emotion control.
+This is a decent model with eight audible emotion tags like via `<laugh>`, `<sigh>`, etc. The tags produce actual audio events, not just prosody shifts. Voice consistency is good and realism is the is decent as well. It sounds pretty human though and realistic. It does take a long time to generate though at about 2.2 RTF. But it gets realistic expressiveness down pretty well. It sounds like a neutral human talking - similar to ChatterBox. No voice cloning support unfortunately though. Best choice when you want reliable, realistic delivery with some emotion control. I will say the pausing on this model is really good - probably one of the best and more realsitic I've tested. It can get some weird non-chosen-language sounding sounds though at times though. But not as significant as CosyVoice. For this reason, I wouldn't recommend it for an assitant, scripting, etc. Quality does improve for shorter sentences though. This is also one of the "heavier" models at 8.6 GB of VRAM. If you need something that sounds realistic, and it can be shorter dialogue, this would be a decent choice. While it has an edge on CosyVoice with pausing, I still couldn't recommend this one as realistic to human sounding, although it can be very close for shorter prompts, because of it's somewhat frequent non-language sounding sounds. I.E: It may make up words frequently with longer sentences/paragraphs.
 
 ---
 
@@ -134,7 +134,7 @@ Not yet tested.
 | **Chatterbox (Voice Clone) - rsxdalv fast** | 6s | **.5** | 15.3s | **.51** | 29.1 | **.48** | 5.7 GB |
 | **CosyVoice3** | 7.5 | **.63** | 17.1 | **.62** | 31s | **.52** | 4.5 GB |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — |
-| **Orpheus - CLI** | 25.6s | 2.2 | 66.4s | 2.2 | — | — | 8.4 GB |
+| **Orpheus - CLI** | 21s | 1.76 | 66.4s | 2.2 | — | — | 8.6 GB |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — |
 | **VibeVoice** | 11s | .92 | 28.2s | .94 | 57s | .95 | 1.4 GB |
 | **Coqui TTS** | 52s | 4.33 | — | — | — | — | — |
@@ -179,7 +179,7 @@ Not yet tested.
 | **Chatterbox (Voice Clone) - rsxdalv fast** | No | — | 4.0 | 5.0 | 4.0 | 5.0 | 5.0 | 4.0 | Yes | 5.0 | 1.5 |
 | **Fun-CosyVoice3** | Yes | 3.5 | 3.5 | 4.0 | 2.0 | 4.5 | 4.5 | 2.0 | Yes | 4.0 | 1.0 |
 | **F5-TTS** | No | — | 3.0 | 4.5 | — | 5.0 | — | — | Yes | 4.5 | 2.0 |
-| **Orpheus - CLI** | Yes | 2.0 | 3.0 | 4.0 | — | 4.5 | 4.5 | 4.0 | No | — | 1.0 |
+| **Orpheus - CLI** | Yes | 2.5 | 3.5 | 4.0 | 2.0 | 4.5 | 4.5 | 2.5 | No | — | 1.0 |
 | **Orpheus** | Yes | 2.5 | 2.5 | 4.0 | — | 3.0 | — | — | No | — | 2.0 |
 | **VibeVoice** | No | 0 | 2.0 | 3.5 | — | 4.5 | 4.5 | 2.0 | Yes | 3.5 | 1.0 |
 | **Coqui TTS** | — | 2.5 | 3.0 | 1.0 | — | 2.0 | — | — | Yes | 2.5 | 3.0 |
