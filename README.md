@@ -45,7 +45,7 @@ Fastest model in the lineup by a wide margin (RTF 0.33). Voice cloning is excell
 
 ### Orpheus
 
-This is a decent model with eight audible emotion tags like via `<laugh>`, `<sigh>`, etc. The tags produce actual audio events, not just prosody shifts. Voice consistency is good and realism is the is decent as well. It sounds pretty human though and realistic. It does take a long time to generate though at about 2.2 RTF. But it gets realistic expressiveness down pretty well. It sounds like a neutral human talking - similar to ChatterBox. No voice cloning support unfortunately though. Best choice when you want reliable, realistic delivery with some emotion control. I will say the pausing on this model is really good - probably one of the best and more realsitic I've tested. It can get some weird non-chosen-language sounding sounds though at times though. But not as significant as CosyVoice. For this reason, I wouldn't recommend it for an assitant, scripting, etc. Quality does improve for shorter sentences though. This is also one of the "heavier" models at 8.6 GB of VRAM. If you need something that sounds realistic, and it can be shorter dialogue, this would be a decent choice. While it has an edge on CosyVoice with pausing, I still couldn't recommend this one as realistic to human sounding, although it can be very close for shorter prompts, because of it's somewhat frequent non-language sounding sounds. I.E: It may make up words frequently with longer sentences/paragraphs.
+This is a decent model with emotion tags like `<laugh>`, `<sigh>`, etc. The tags produce actual audio events, not just prosody shifts. Voice consistency is good and realism is decent as well. It sounds fairly human and realistic. I will say the pausing on this model is really good - probably one of the best and more realistic I've tested. It does take a long time to generate though at about 2 RTF. But it gets realistic expressiveness down pretty well. It sounds like a human talking neutrally- similar to ChatterBox. Voice cloning is now supported via `--ref-audio` / `--ref-text`, which switches to the pretrained base model automatically. **Important caveat:** emotion tags do not work with voice cloning — the pretrained model was never fine-tuned to respond to them. So it's emotion tags OR voice cloning, not both at the same time. Unfortunately when using the voice cloning, it can repeat sentences randomly so I would not recommend the voice cloning for Oprheus. It also takes even longer to generate as well at about 3 RTF for longer paragraphs - one of the worst I've tested. Because it's voice cloning isn't the best quality, and it doesn't have a worthy edge on any of the others voice cloning abilities, there isn't a reason to pick it over TTS models. Also when using voice cloning it sounds a lot more bland as well, reducing its expressability. If you don't mind preset voices, then this is good choice when you want reliable, realistic delivery with some emotion control on a built-in voice. For voice cloning it also often gets some weird non-language sounding sounds and weird artifacts - even for the preset voices, just not as often. Especially the longer your text is. But not as significant as CosyVoice. For this reason, I wouldn't recommend it for an assistant, scripting, etc unless several generations are okay. Quality does improve for shorter sentences though. This is also one of the heavier models at about 9 GB of VRAM.
 
 ---
 
@@ -134,7 +134,8 @@ Not yet tested.
 | **Chatterbox (Voice Clone) - rsxdalv fast** | 6s | **.5** | 15.3s | **.51** | 29.1 | **.48** | 5.7 GB |
 | **CosyVoice3** | 7.5 | **.63** | 17.1 | **.62** | 31s | **.52** | 4.5 GB |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — |
-| **Orpheus - CLI** | 21s | 1.76 | 66.4s | 2.2 | — | — | 8.6 GB |
+| **Orpheus - CLI** | 22s | 1.8 | 66.4s | 2.2 | 146s | 2.4 | 9.1 GB |
+| **Orpheus (Voice Clone) - CLI** | 23.5s | 1.96 | 76s | 2.5 | 191s | 3.2 | 9.3 GB |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — |
 | **VibeVoice** | 11s | .92 | 28.2s | .94 | 57s | .95 | 1.4 GB |
 | **Coqui TTS** | 52s | 4.33 | — | — | — | — | — |
@@ -179,7 +180,8 @@ Not yet tested.
 | **Chatterbox (Voice Clone) - rsxdalv fast** | No | — | 4.0 | 5.0 | 4.0 | 5.0 | 5.0 | 4.0 | Yes | 5.0 | 1.5 |
 | **Fun-CosyVoice3** | Yes | 3.5 | 3.5 | 4.0 | 2.0 | 4.5 | 4.5 | 2.0 | Yes | 4.0 | 1.0 |
 | **F5-TTS** | No | — | 3.0 | 4.5 | — | 5.0 | — | — | Yes | 4.5 | 2.0 |
-| **Orpheus - CLI** | Yes | 2.5 | 3.5 | 4.0 | 2.0 | 4.5 | 4.5 | 2.5 | No | — | 1.0 |
+| **Orpheus - CLI** | Yes | 2.5 | 3.5 | 4.0 | 2.0 | 2.0 | 2.0 | 2.5 | No | — | 1.0 |
+| **Orpheus (Voice Clone) - CLI** | No | — | 2.0 | 2.0 | 1.0 | 1.0 | 2.5 | 1.0 | Yes | 2.0 | 1.0 |
 | **Orpheus** | Yes | 2.5 | 2.5 | 4.0 | — | 3.0 | — | — | No | — | 2.0 |
 | **VibeVoice** | No | 0 | 2.0 | 3.5 | — | 4.5 | 4.5 | 2.0 | Yes | 3.5 | 1.0 |
 | **Coqui TTS** | — | 2.5 | 3.0 | 1.0 | — | 2.0 | — | — | Yes | 2.5 | 3.0 |
@@ -318,7 +320,7 @@ Which models support inline emotion tags that produce **real audio events** (not
 | Model | Emotion Tags | Tag Format | Sample Tags | VRAM | Voice Cloning |
 |---|---|---|---|---|---|
 | **Dia / Dia2** | ✅ 21 tags | `(laughs)` | `(laughs)` `(cries)` `(gasps)` `(sighs)` `(growls)` `(groans)` `(screams)` | 4–5 GB | ✅ |
-| **Orpheus** | ✅ 8 tags | `<laugh>` | `<laugh>` `<sigh>` `<gasp>` `<groan>` `<cough>` `<sniffle>` `<yawn>` `<chuckle>` | 6–8 GB | ❌ |
+| **Orpheus** | ✅ 8 tags (finetune only) | `<laugh>` | `<laugh>` `<sigh>` `<gasp>` `<groan>` `<cough>` `<sniffle>` `<yawn>` `<chuckle>` | 6–8 GB | ✅ (tags disabled when cloning) |
 | **Bark** | ⚠️ limited | `[laughter]` | `[laughter]` `[sighs]` `[clears throat]` | 6–8 GB | ❌ |
 | **Fish Speech S2 Pro** | ⚠️ subtle | `[sighs]` | Tags present but produce mild prosody changes only | 14–15 GB | ✅ |
 | **Higgs Audio v2** | ✅ emergent | none needed | Pass `instruct=` or embed emotion in text | 24 GB | ✅ |
