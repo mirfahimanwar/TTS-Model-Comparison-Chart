@@ -37,9 +37,9 @@ This is a very interesting & unique model. While it doesn't have as many emotion
 
 ---
 
-### F5-TTS
+### Higgs Audio v2
 
-Fastest model in the lineup by a wide margin (RTF 0.33). Voice cloning is excellent — easily the best clone quality I've tested (4.5/5). No emotion tags, purely neutral TTS, but the voice reproduction is remarkably clean. Great pick when you need fast, high-quality cloned speech without any expressiveness requirements.
+This is another unique model. For emotion control, it doesn't use emotion tags, but instead infers expression from context. You can also dictate emotion via a --scene flag and let it be more expressive with --temp flag. Although keep in mind with higher temperates, you may get less consistent results. This model also support cloning as well, and it's pretty decent! For this model 24 GB VRAM is recommended but you can get away with 16 GB of VRAM as well. RTF can be around .77 or so if using the --fast-cache flag, otherwise it's closer to 1.42. This is by far the heaviest VRAM model yet, using 14.2 GB without the --fast-cache flag and 16 GB+ on my 4090 Laptop with --fast-cache flag. As mentioned before this model has several options for voice control. The first option is voice cloning. It's not as good as F5, but it's pretty good and keeps the voice somewhat consistent at lower tempteratures. It has a "--scence" flag which you can describe the voice you want. For example you can say things like "a young nasely man speaking", etc. It also has preset voices as well you can use. And these are additive, so you can combine them together with voice cloning. Use the --temp flag to control expressiveness (although you do risk more random and inconsistent generations this way). Unfortunately, the emotion tags only seem to work rarely, so this isn't a model to use if you want them. I'd say 1 out of every 20 generations for when emotion tags work on average. Also one thing to note, if you don't have the recommended VRAM and you use this model, after a few generations it will take longer and longer to load in interactive mode. This model would be a good choice if you need specific control of a voice and fine tuning, and don't mind playing around with it awhile to get the perfect voice and don't mind several generations. It can generate artificts as well, with one generation having a random beeping sound for over a minute of audio. So beware of things like that happening. Lastly, pausing and speed at which talks on this model is very realistic as well. Keep in mind when trying to voice cloning, the scene and temperature tags will have less effect than if using without. I would not recommend this for a voice assitant while consistent, because of how much VRAM it uses when there are models that offer a similar enough quality at a fraction of the VRAM usage. A temp of .8 seems to do well for an in between of consistency and expressiveness for voice cloning. It also does seem to cut words off at very end of the text as well.
 
 ---
 
@@ -52,6 +52,12 @@ This is a decent model with emotion tags like `<laugh>`, `<sigh>`, etc. The tags
 ### Chatterbox
 
 Shockingly clean output — perfect consistency (5/5) and no trailing noise and negligible cutoffs. No emotion tags, but the `exaggeration=` parameter (0.0–2.0) pulls some range out of it. Voice clone quality is one of the best I've tested at 5/5 - I'd say it rivals Elevan Labs and F5-TTS. For this test I'm using the fast rsxdalv variant which brings it down to speedy 0.5× RTF! This is my go-to model when quality and reliability matter more than expressiveness and emotion tags. I will say though, it **can** get a bit of a british accent at times - not sure why. But it's not that different from the original speaker, just noticeable. This is one of the more realistic sounding ones - if you want it to sound human, and not robotic, this is a very good choice. The best way I can describe this model - is that it sounds like an unexpressive human. For example, it won't sound sad, angry, happy etc. but more more neutral. Almost like a professor teaching a class. 
+
+---
+
+### F5-TTS
+
+Fastest model in the lineup by a wide margin (RTF 0.33). Voice cloning is excellent — easily the best clone quality I've tested (4.5/5). No emotion tags, purely neutral TTS, but the voice reproduction is remarkably clean. Great pick when you need fast, high-quality cloned speech without any expressiveness requirements.
 
 ---
 
@@ -91,12 +97,6 @@ High VRAM (14–15 GB) but the voice cloning is very good and it supports a larg
 
 ---
 
-### Higgs Audio v2
-
-Haven't benchmarked yet. Emergent emotion control via `instruct=` parameter — no tags needed, just describe the emotion in natural language. 24 GB VRAM requirement is the main barrier. High ceiling on quality based on published benchmarks.
-
----
-
 ### Qwen3-TTS
 
 Haven't benchmarked yet. NL-instruction emotion control — you describe the emotion in a separate instruction string. Flexible and interesting approach. Runs at 3–8 GB VRAM depending on the variant. Voice cloning supported.
@@ -133,6 +133,8 @@ Not yet tested.
 | **Chatterbox - rsxdalv fast** | 6s | **.5** | 15.3s | **.51** | 29.1 | **.48** | 5.1 GB |
 | **Chatterbox (Voice Clone) - rsxdalv fast** | 6s | **.5** | 15.3s | **.51** | 29.1 | **.48** | 5.7 GB |
 | **CosyVoice3** | 7.5 | **.63** | 17.1 | **.62** | 31s | **.52** | 4.5 GB |
+| **Higgs Audio V2** | 17.4s | 1.4 | 41.7 | 1.39 | 85.2s | 1.42| 14.2 GB |
+| **Higgs Audio V2 (--fast-cache)** | 11s | **.77** | 23.8s | **.79** | 52s | **.87** | 16 GB+ |
 | **F5-TTS** | 4s | 0.33 | — | — | — | — | — |
 | **Orpheus - CLI** | 22s | 1.8 | 66.4s | 2.2 | 146s | 2.4 | 9.1 GB |
 | **Orpheus (Voice Clone) - CLI** | 23.5s | 1.96 | 76s | 2.5 | 191s | 3.2 | 9.3 GB |
@@ -179,6 +181,8 @@ Not yet tested.
 | **Chatterbox - rsxdalv fast** | No | — | 4.0 | 5.0 | 4.5 | 5.0 | 5.0 | 4.5 | No | - | 2 |
 | **Chatterbox (Voice Clone) - rsxdalv fast** | No | — | 4.0 | 5.0 | 4.0 | 5.0 | 5.0 | 4.0 | Yes | 5.0 | 1.5 |
 | **Fun-CosyVoice3** | Yes | 3.5 | 3.5 | 4.0 | 2.0 | 4.5 | 4.5 | 2.0 | Yes | 4.0 | 1.0 |
+| **Higgs Audio v2** | No | — | 4.5 | 4.0 | 3.5 | 4.0 | 3.5 | 3.5 | Yes | 4.0 | 2.0 |
+| **Higgs Audio v2 (--fast-cache)** | No | — | 4.5 | 4.0 | 3.5 | 4.0 | 3.5 | 3.5 | Yes | 4.0 | 2.0 |
 | **F5-TTS** | No | — | 3.0 | 4.5 | — | 5.0 | — | — | Yes | 4.5 | 2.0 |
 | **Orpheus - CLI** | Yes | 2.5 | 3.5 | 4.0 | 2.0 | 2.0 | 2.0 | 2.5 | No | — | 1.0 |
 | **Orpheus (Voice Clone) - CLI** | No | — | 2.0 | 2.0 | 1.0 | 1.0 | 2.5 | 1.0 | Yes | 2.0 | 1.0 |
@@ -272,7 +276,7 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | OpenVoice | — | — |
 | Kyutai | — | — |
 | Kyutai-Mimi | — | — |
-| Higgs | — | — |
+| Higgs | ✅ Ready | — |
 | Kokoro | — | — |
 | XTTS | — | — |
 | Sesame CSM | — | — |
