@@ -15,7 +15,7 @@ Personal notes on each model after hands-on testing. Real Time Factor (RTF) refe
 
 ### Bark
 
-Although the main Bark repo doesn't natively support voice cloning itself, there is a 'bark-with-voice-clone' repo that I included with the one click installer. The voice cloning does work, but it isn't the best. The voice does somewhat resemble the cloned one, but changes slightly every generation so it's not the most consistent - almost as if you varied your own voice everytime you talk, but with a different starting voice. Anyways, It can be fun, quirky, and expressive when you get lucky — but oftentimes inconsistent. As far as voice cloning goes - the emotion tags (`[laughter]`, `[sighs]`, etc.) work sometimes and can produce surprising results, but you never quite know what you'll get. Sometimes (with voice cloning) it may skip emotion tags entirely. I will say though, it's kinda impressive it can take a voice (without laughing, sighing, etc) and relatively apply those emotions to a voice that wasn't trained on it. Voice cloning is limited; the `.npz` approach works but the clone just barely sounds close to the reference. It can also sometimes switch voices too, for example, if you clone a female voice, you may get a male voice, although rare in my testing, but still noteworthy to mention. Otherwise, it isn't really that expressive. It sounds almost half robotic and half human. It does work a little better without voice cloning though, if you don't mind the presest voices, which there's quite a few of. Best used for creative/character TTS where some randomness is acceptable, not for production, narration work, or voice assistants. It's also not the fastest, nor the slowest either with 1.35 RTF. Note: Although the official repository seems to use brackets for emotions tags, I've found that parenthesis seem to be better. Using the brackets increases the chances it'll sound less like the voice clone and vary the voice more. The voice cloning also increases the RTF from 1.35 to about 1.43 as well. Longer sentences can increase the likelihood that the voice deviates, but there is a --rolling flag that I added in you can use - meaning - it should use the context of the voice prior to the chunking, but this doesn't always work the best. There is also a pre-existing --seed flag you can use as well which allows you to use the seed you liked for reproducability to mitigate these issues. Voices are more consistent if don't use voice cloning. It's supposed to support music and signing, which would increase it's emotion score, but I've found it to not to not work nearly as well or even close to the demo in the repo.
+Although the main Bark repo doesn't natively support voice cloning itself, there is a 'bark-with-voice-clone' repo that I included with the one click installer. The voice cloning does work, but it isn't the best. The voice does somewhat resemble the cloned one, but changes slightly every generation so it's not the most consistent - almost as if you varied your own voice everytime you talk, but with a different starting voice. Anyways, It can be fun, quirky, and expressive when you get lucky — but oftentimes inconsistent. As far as voice cloning goes - the emotion tags (`[laughter]`, `[sighs]`, etc.) work sometimes and can produce surprising results, but you never quite know what you'll get. Sometimes (with voice cloning) it may skip emotion tags entirely. I will say though, it's kinda impressive it can take a voice (without laughing, sighing, etc) and relatively apply those emotions to a voice that wasn't trained on it. Voice cloning is limited; the `.npz` approach works but the clone just barely sounds close to the reference. It can also sometimes switch voices too, for example, if you clone a female voice, you may get a male voice, although rare in my testing, but still noteworthy to mention. Otherwise, it isn't really that expressive. It sounds almost half robotic and half human. It does work a little better without voice cloning though, if you don't mind the presest voices, which there's quite a few of. Best used for creative/character TTS where some randomness is acceptable, not for production, narration work, or voice assistants. It's also not the fastest, nor the slowest either with 1.35 RTF. Note: Although the official repository seems to use brackets for emotions tags, I've found that parenthesis seem to be better. Using the brackets increases the chances it'll sound less like the voice clone and vary the voice more. The voice cloning also increases the RTF from 1.35 to about 1.43 as well. Longer sentences can increase the likelihood that the voice deviates, but there is a --rolling flag that I added in you can use - meaning - it should use the context of the voice prior to the chunking, but this doesn't always work the best. There is also a pre-existing --seed flag you can use as well which allows you to use the seed you liked for reproducability to mitigate these issues. Voices are more consistent if don't use voice cloning. It's supposed to support music and singing, which would increase it's emotion score, but I've found it to not to not work nearly as well or even close to the demo in the repo.
 
 ---
 
@@ -39,7 +39,7 @@ This is a very interesting & unique model. While it doesn't have as many emotion
 
 ### Higgs Audio v2
 
-This is another unique model. For emotion control, it doesn't use emotion tags, but instead infers expression from context. You can also dictate emotion via a --scene flag and let it be more expressive with --temp flag. Although keep in mind with higher temperates, you may get less consistent results. This model also support cloning as well, and it's pretty decent! For this model 24 GB VRAM is recommended but you can get away with 16 GB of VRAM as well. RTF can be around .77 or so if using the --fast-cache flag, otherwise it's closer to 1.42. This is by far the heaviest VRAM model yet, using 14.2 GB without the --fast-cache flag and 16 GB+ on my 4090 Laptop with --fast-cache flag. As mentioned before this model has several options for voice control. The first option is voice cloning. It's not as good as F5, but it's pretty good and keeps the voice somewhat consistent at lower tempteratures. It has a "--scence" flag which you can describe the voice you want. For example you can say things like "a young nasely man speaking", etc. It also has preset voices as well you can use. And these are additive, so you can combine them together with voice cloning. Use the --temp flag to control expressiveness (although you do risk more random and inconsistent generations this way). Unfortunately, the emotion tags only seem to work rarely, so this isn't a model to use if you want them. I'd say 1 out of every 20 generations for when emotion tags work on average. Also one thing to note, if you don't have the recommended VRAM and you use this model, after a few generations it will take longer and longer to load in interactive mode. This model would be a good choice if you need specific control of a voice and fine tuning, and don't mind playing around with it awhile to get the perfect voice and don't mind several generations. It can generate artificts as well, with one generation having a random beeping sound for over a minute of audio. So beware of things like that happening. Lastly, pausing and speed at which talks on this model is very realistic as well. Keep in mind when trying to voice cloning, the scene and temperature tags will have less effect than if using without. I would not recommend this for a voice assitant while consistent, because of how much VRAM it uses when there are models that offer a similar enough quality at a fraction of the VRAM usage. A temp of .8 seems to do well for an in between of consistency and expressiveness for voice cloning. It also does seem to cut words off at very end of the text as well.
+This is another unique model. For emotion control, it doesn't use emotion tags, but instead infers expression from context. You can also dictate emotion via a --scene flag and let it be more expressive with --temp flag. Although keep in mind with higher temperates, you may get less consistent results. This model also support cloning as well, and it's pretty decent! For this model 24 GB VRAM is recommended but you can get away with 16 GB of VRAM as well. RTF can be around .77 or so if using the --fast-cache flag, otherwise it's closer to 1.42. This is by far the heaviest VRAM model yet, using 14.2 GB without the --fast-cache flag and 16 GB+ on my 4090 Laptop with --fast-cache flag. As mentioned before this model has several options for voice control. The first option is voice cloning. It's not as good as F5, but it's pretty good and keeps the voice somewhat consistent at lower tempteratures. It has a "--scence" flag which you can describe the voice you want. For example you can say things like "a young nasely man speaking", etc. It also has preset voices as well you can use. And these are additive, so you can combine them together with voice cloning. Use the --temp flag to control expressiveness (although you do risk more random and inconsistent generations this way). Unfortunately, the emotion tags only seem to work rarely, so this isn't a model to use if you want them. I'd say 1 out of every 20 generations for when emotion tags work on average. Also one thing to note, if you don't have the recommended VRAM and you use this model, after a few generations it will take longer and longer to load in interactive mode. This model would be a good choice if you need specific control of a voice and fine tuning, and don't mind playing around with it awhile to get the perfect voice and don't mind several generations. It can generate artificts as well, with one generation having a random beeping sound for over a minute of audio. So beware of things like that happening. Lastly, pausing and speed at which talks on this model is very realistic as well. Keep in mind when trying to voice cloning, the scene and temperature tags will have less effect than if using without. I would not recommend this for a voice assitant while consistent, because of how much VRAM it uses when there are models that offer a similar enough quality at a fraction of the VRAM usage. A temp of .8 seems to do well for an in between of consistency and expressiveness for voice cloning. It also does seem to cut words off at very end of the text as well. When not using voice cloning the voices can vary quite a bit. For example, it may sound male or female, but vary quite a bit. Temperature may help with this though.
 
 ---
 
@@ -52,6 +52,12 @@ This is a decent model with emotion tags like `<laugh>`, `<sigh>`, etc. The tags
 ### Chatterbox
 
 Shockingly clean output — perfect consistency (5/5) and no trailing noise and negligible cutoffs. No emotion tags, but the `exaggeration=` parameter (0.0–2.0) pulls some range out of it. Voice clone quality is one of the best I've tested at 5/5 - I'd say it rivals Elevan Labs and F5-TTS. For this test I'm using the fast rsxdalv variant which brings it down to speedy 0.5× RTF! This is my go-to model when quality and reliability matter more than expressiveness and emotion tags. I will say though, it **can** get a bit of a british accent at times - not sure why. But it's not that different from the original speaker, just noticeable. This is one of the more realistic sounding ones - if you want it to sound human, and not robotic, this is a very good choice. The best way I can describe this model - is that it sounds like an unexpressive human. For example, it won't sound sad, angry, happy etc. but more more neutral. Almost like a professor teaching a class. 
+
+---
+
+### IndexTTS2
+
+This model excels at the ability to pull range out of emotion expressiveness - even when voice cloning. It beats most other TTS models by a large factor in this regard. It has ability to sound happy, angry, sad, afraid, disgusted, melancholic, suprised, and calm. While it has the ability to pull range of emotion, it's important to note it's not pefect. When testing with the same phrase: For example, for some reason happy, afraid, and sad sound very similar, in the way that they're exaggerated. When using angry it sounds more excited or surprised in the way it shapes the voice. When using the disgusted option it sounds more annoyed than digusted. Melancholic does sound pretty sad though. The surprised option sounds like more like a monotone and sarcastic surprised. Similarly, the calm option sounds a little snarky or sarcastic as well. I'm not sure if it's a completely fair way to compare though, because our brains aren't used to hearing the same phrase in different tones. But thought it'd be a way to consistently see how the tone changes without the variable of different of text. To go back to voice cloning - the cloned voice does sound very close to the refence clip. Not as good as Eleven Labs but very close! Furthermore, it does a surprisingly good job at taking the cloned voice and applying the prior mentioned emotions/tones to the voice. Meaning - it still sounds like the cloned reference, even when applying the emotions/tones to the voice. Another thing this model excels at is keeping the prosody and inflection of the cloned voice as well. I will say, at least with voice cloning, it does have many problems with non word text i.e: apostrophes, hypens, etc. It will say things like "don T" instead of "don't" and so forth. It's a very heavy model when it comes to VRAM - at 14 GB of VRAM. So you will need at least a 16 GB VRAM GPU as well. For the reasons of non word text issues regarding voice cloning, I would not recommend this model, unless you're willing to do work arounds for scripting. Same regards as a voice assitant. It's unfortunate, because otherwise this model is very expressive. Especially with how well it clones the original speaker.
 
 ---
 
@@ -109,7 +115,7 @@ Haven't benchmarked yet. No emotion tag support — prosody entirely from voice 
 
 ---
 
-### Kokoro, XTTS, Sesame CSM, GPT-SoVITS, ChatTTS, IndexTTS2, FireRedTTS, CosyVoice2, MaskGCT, Zonos, AllTalk TTS
+### Kokoro, XTTS, Sesame CSM, GPT-SoVITS, ChatTTS, FireRedTTS, CosyVoice2, MaskGCT, Zonos, AllTalk TTS
 
 Not yet tested.
 
@@ -139,6 +145,7 @@ Not yet tested.
 | **Orpheus - CLI** | 22s | 1.8 | 66.4s | 2.2 | 146s | 2.4 | 9.1 GB |
 | **Orpheus (Voice Clone) - CLI** | 23.5s | 1.96 | 76s | 2.5 | 191s | 3.2 | 9.3 GB |
 | **Orpheus** | 12s | 1.00 | — | — | — | — | — |
+| **IndexTTS2** | 9.6 | .8 | 25s | .83 | 50.4s | .83 | 14 GB |
 | **VibeVoice** | 11s | .92 | 28.2s | .94 | 57s | .95 | 1.4 GB |
 | **Coqui TTS** | 52s | 4.33 | — | — | — | — | — |
 | **OpenVoice** | 19s | 1.58 | — | — | — | — | — |
@@ -150,7 +157,6 @@ Not yet tested.
 | **Sesame CSM** | — | — | — | — | — | — | — |
 | **GPT-SoVITS** | — | — | — | — | — | — | — |
 | **ChatTTS** | — | — | — | — | — | — | — |
-| **IndexTTS2** | — | — | — | — | — | — | — |
 | **Fish Speech** | — | — | — | — | — | — | — |
 | **FireRedTTS** | — | — | — | — | — | — | — |
 | **CosyVoice2** | — | — | — | — | — | — | — |
@@ -188,6 +194,7 @@ Not yet tested.
 | **Orpheus (Voice Clone) - CLI** | No | — | 2.0 | 2.0 | 1.0 | 1.0 | 2.5 | 1.0 | Yes | 2.0 | 1.0 |
 | **Orpheus** | Yes | 2.5 | 2.5 | 4.0 | — | 3.0 | — | — | No | — | 2.0 |
 | **VibeVoice** | No | 0 | 2.0 | 3.5 | — | 4.5 | 4.5 | 2.0 | Yes | 3.5 | 1.0 |
+| **IndexTTS2** | No | — | 4.5 | 4.5 | 3.5 | 4.5 | 3.5 | 4.0 | Yes | 4.5 | 1.0 |
 | **Coqui TTS** | — | 2.5 | 3.0 | 1.0 | — | 2.0 | — | — | Yes | 2.5 | 3.0 |
 | **OpenVoice** | — | 1.0 | 2.0 | 3.5 | — | 2.0 | — | — | Yes | 2.0 | 2.0 |
 | **Kyutai** | — | — | 4.0 | 5.0 | — | 5.0 | — | — | No | — | 3.0 |
@@ -198,7 +205,6 @@ Not yet tested.
 | **Sesame CSM** | — | — | — | — | — | — | — | — | — | — | 5.0 |
 | **GPT-SoVITS** | — | — | — | — | — | — | — | — | — | — | 5.0 |
 | **ChatTTS** | — | — | — | — | — | — | — | — | — | — | — |
-| **IndexTTS2** | — | — | — | — | — | — | — | — | — | — | 5.0 |
 | **Fish Speech** | — | — | — | — | — | — | — | — | — | — | — |
 | **FireRedTTS** | — | — | — | — | — | — | — | — | — | — | — |
 | **CosyVoice2** | — | — | — | — | — | — | — | — | — | — | — |
@@ -282,7 +288,7 @@ Each model lives in its own subfolder with a `setup.ps1` one-click installer and
 | Sesame CSM | — | — |
 | GPT-SoVITS | — | — |
 | ChatTTS | — | — |
-| IndexTTS2 | — | — |
+| IndexTTS2 | ✅ Ready | — |
 | Fish Speech S2 Pro | ✅ Ready | — |
 | FireRedTTS | — | — |
 | CosyVoice2 | — | — |
@@ -328,6 +334,7 @@ Which models support inline emotion tags that produce **real audio events** (not
 | **Bark** | ⚠️ limited | `[laughter]` | `[laughter]` `[sighs]` `[clears throat]` | 6–8 GB | ❌ |
 | **Fish Speech S2 Pro** | ⚠️ subtle | `[sighs]` | Tags present but produce mild prosody changes only | 14–15 GB | ✅ |
 | **Higgs Audio v2** | ✅ emergent | none needed | Pass `instruct=` or embed emotion in text | 24 GB | ✅ |
+| **IndexTTS2** | ✅ multi-modal | none needed | `--emo-audio FILE` · `--emo-text "angry"` · `--emo-vector 0,0.8,0,...` | 8–12 GB | ✅ |
 | **Qwen3-TTS** | ✅ NL instructions | none needed | `instruct="speak with excitement"` | 3–8 GB | ✅ |
 | **MegaTTS 3** | ❌ | none | No tag support — prosody via voice clone only | 8–16 GB | ✅ |
 | **Chatterbox** | ❌ | none | Emotion via `exaggeration=` parameter (0.0–2.0) | 4–6 GB | ✅ |
